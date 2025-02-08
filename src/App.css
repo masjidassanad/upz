@@ -1,0 +1,24 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --color-brand-primary: #562d63;
+  --color-brand-secondary: #ffb800;
+}
+
+html, body {
+  font-size: 14px;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  background-color: var(--color-brand-primary);
+}
+
+#root {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  height: 100vh;
+}
