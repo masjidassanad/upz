@@ -7,23 +7,23 @@ const Home = () => {
   const navigate = useNavigate();
 
   const {
-    data: ajaxProgramData,
-    isLoading: ajaxProgramLoading,
-    error: ajaxProgramError,
+    data: ajaxMainData,
+    isLoading: ajaxMainLoading,
+    error: ajaxMainError,
   } = useQuery({
-    queryKey: ['program'],
-    queryFn: () => api.getPrograms(),
+    queryKey: ['main'],
+    queryFn: () => api.getMainApi(),
   });
 
-  if (ajaxProgramLoading) return <div>Loading...</div>;
-  if (ajaxProgramError) return <div>Error fetching program: {ajaxProgramError.message}</div>;
+  if (ajaxMainLoading) return <div>Loading...</div>;
+  if (ajaxMainError) return <div>Error fetching program: {ajaxMainError.message}</div>;
 
   return (
     <div className="upz-page-home">
       <div className="upz-page-home__programs">
-        {ajaxProgramData.map((program) => (
-          <div key={program.id} className="program-item">
-            {program.name}
+        {ajaxMainData.programs.map((program) => (
+          program.status && <div key={program.id} className="program-item">
+            {program.name} {program.featured && '🔥'}
           </div>
         ))}
       </div>

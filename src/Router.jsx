@@ -5,7 +5,6 @@ import App from "./App";
 import ErrorBoundary from "./ErrorBoundary";
 
 import Home from "./pages/Home";
-import Category from "./pages/Category";
 import Program from "./pages/Program";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -28,11 +27,7 @@ const Router = () => {
           element: <Home />,
         },
         {
-          path: "category",
-          element: <Category />,
-        },
-        {
-          path: "program/:code",
+          path: "program/:url_alias",
           element: <Program />,
         },
       ],
