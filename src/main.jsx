@@ -1,10 +1,28 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './App.css'
+
+/**
+ * React Query: Manage server state (API data)
+ * - QueryClientProvider: Makes the React Query client available to all components in your app.
+ * - QueryClient: Manages caching, background updates, and other features of React Query.
+ */
+import { QueryClientProvider } from '@tanstack/react-query';
+import queryClient from "./services/queryClient";
+
+/**
+ * Zustand: Manage global state
+ * - create: Create a store.
+ * - useStore: Use the store in your app.
+ */
+// import { create } from "zustand";
+
+
+import Router from "./Router.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <Router />
+    </QueryClientProvider>
   </StrictMode>,
 )
