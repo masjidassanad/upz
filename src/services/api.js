@@ -11,13 +11,18 @@ const mainApi = {
   })
 };
 
+// TODO: extract getMainApi to separate getSettings and getProgramsList
+// Cache getProgramsList if possible, use getSettings.version to invalidate cache
+
 const getMainApi = async () => {
   const responseSettings = await mainApi.instance.get('exec?endpoint=settings');
   const responsePrograms = await mainApi.instance.get('exec?endpoint=programs');
 
+  const programsList = responsePrograms.data.filter(program => program.id !== '');
+
   return {
     settings: responseSettings.data,
-    programs: responsePrograms.data,
+    programs: programsList,
   };
 };
 
@@ -26,30 +31,30 @@ const programApi = {
   'zakat': {
     file: 'GDrive/UPZ/microsite/01-zakat',
     instance: axios.create({
-      baseURL: `${googleApi}...`,
+      baseURL: `${googleApi}AKfycbwBT_-eX5f8s9IAUReRqdHNAkK4eV3GDelke1UIEDh0zhDXtRww4SOvdxAn1fYEFnvnQA`,
       headers: { 'Content-Type': 'application/json' },
     })
   },
-  'infaq': {
-    file: 'GDrive/UPZ/microsite/02-infaq',
-    instance: axios.create({
-      baseURL: `${googleApi}...`,
-      headers: { 'Content-Type': 'application/json' },
-    })
-  },
-  'wakaf': {
-    file: 'GDrive/UPZ/microsite/04-wakaf',
-    instance: axios.create({
-      baseURL: `${googleApi}...`,
-      headers: { 'Content-Type': 'application/json' },
-    })
-  },
+  // 'infaq': {
+  //   file: 'GDrive/UPZ/microsite/02-infaq',
+  //   instance: axios.create({
+  //     baseURL: `${googleApi}...`,
+  //     headers: { 'Content-Type': 'application/json' },
+  //   })
+  // },
+  // 'wakaf': {
+  //   file: 'GDrive/UPZ/microsite/04-wakaf',
+  //   instance: axios.create({
+  //     baseURL: `${googleApi}...`,
+  //     headers: { 'Content-Type': 'application/json' },
+  //   })
+  // },
 };
 
-const getProgramData = async (program) => {
-  const responseDetail = await programApi[program].instance.get('exec?endpoint=detail');
-  const responseMuhsinin = await programApi[program].instance.get('exec?endpoint=muhsinin');
-  const responseInfo = await programApi[program].instance.get('exec?endpoint=info');
+const getProgramData = async (codename) => {
+  const responseDetail = await programApi[codename].instance.get('exec?endpoint=detail');
+  const responseMuhsinin = await programApi[codename].instance.get('exec?endpoint=muhsinin');
+  const responseInfo = await programApi[codename].instance.get('exec?endpoint=info');
 
   return {
     detail: responseDetail.data,
