@@ -1,0 +1,1 @@
+*,*:before,*:after{box-sizing:inherit}:root{--app-width: 520px;--app-width: 640px;--color-brand-primary: #562d63;--color-brand-secondary: #ffb800}html,body{font-size:14px;margin:0;padding:0;box-sizing:border-box;background-color:var(--color-brand-primary);background-color:#d9e8e3}#root{max-width:var(--app-width);margin:0 auto;padding:1.5rem;background-color:#fff;height:100vh}
