@@ -18,6 +18,7 @@ export default defineConfig({
       "@assanad": path.resolve(__dirname, "./src"),
     },
   },
+  base: '/upz/', // build output assets path: /upz/assets/
   build: {
     outDir: path.resolve(__dirname, "./docs"), // Github pages "www" folder
   },
