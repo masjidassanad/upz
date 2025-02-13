@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div className="upz-page-notfound">
       404 - The page you are looking for does not exist.
-      <button onClick={() => navigate('/upz/')}>Go to Home</button>
+      <button onClick={() => navigate('/')}>Go to Home</button>
     </div>
   );
 };

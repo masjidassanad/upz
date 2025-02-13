@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className="upz-page-home">
       <div className="upz-page-home__programs">
-        Test <button onClick={() => navigate('/upz/program/test')}>Test</button>
+        Test <button onClick={() => navigate('/program/test')}>Test</button>
         {/* {settingsData.programs.map((program) => (
           program.status && <div key={program.id} className="program-item">
             {program.name} {program.featured && '🔥'}

@@ -32,7 +32,7 @@ const Router = () => {
       ],
     },
   ], {
-    basename: '/upz/',
+    // basename: '/upz/',
   });
 
   return <RouterProvider router={router} />;
