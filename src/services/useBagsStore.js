@@ -43,7 +43,9 @@ const useBagsStore = create((setState, getState) => ({
    * - getBags('program.zakat')
    * - getBags('settings.group.key')
    */
-  getBags: (path, defaultValue = null) => {
+  getBags: (path = '', defaultValue = null) => {
+    if (!path) return getState().bags;
+
     return get(getState().bags, path, defaultValue);
   },
 

@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from 'react'
+import { Outlet } from "react-router-dom";
+
+import config from './config';
+import useBagsStore from './services/useBagsStore';
 import './App.css'
 
-
 function App() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const { setBags } = useBagsStore();
+
+  useEffect(() => {
+    console.log('Setting config in bags:', config); // Debugging
+    setBags('config', config);
+  }, []);
 
   return (
     <>
       <p>
-        UPZ Masjid Assanad
+        {config.app.name}
       </p>
       <div>
         <Outlet />
