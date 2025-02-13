@@ -14,14 +14,14 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="upz-app">
       <p>
         {config.app.name}
       </p>
-      <div>
+      <div className="upz-outlet">
         <Outlet />
       </div>
-    </>
+    </div>
   )
 }
 

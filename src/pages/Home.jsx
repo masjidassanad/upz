@@ -6,7 +6,6 @@ import useBagsStore from "../services/useBagsStore";
 import api from "../services/api";
 
 const Home = () => {
-  const navigate = useNavigate();
   const { bags,getBags, setBags } = useBagsStore();
   console.log({bags, getBags: getBags()});
 
@@ -34,6 +33,7 @@ const Home = () => {
   return (
     <div className="upz-page-home">
       <div className="upz-page-home__programs">
+        Test
         {/* {settingsData.programs.map((program) => (
           program.status && <div key={program.id} className="program-item">
             {program.name} {program.featured && '🔥'}
