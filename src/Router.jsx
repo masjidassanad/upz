@@ -31,7 +31,9 @@ const Router = () => {
         },
       ],
     },
-  ]);
+  ], {
+    basename: '/upz/',
+  });
 
   return <RouterProvider router={router} />;
 };
