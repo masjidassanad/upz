@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import ErrorBoundary from "./ErrorBoundary";
@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound.jsx";
 // https://reactrouter.com/6.29.0/route/route
 // https://reactrouter.com/6.29.0/route/loader
 const Router = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: (
