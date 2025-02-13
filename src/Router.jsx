@@ -11,7 +11,6 @@ import NotFound from "./pages/NotFound.jsx";
 // https://reactrouter.com/6.29.0/route/route
 // https://reactrouter.com/6.29.0/route/loader
 const Router = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",

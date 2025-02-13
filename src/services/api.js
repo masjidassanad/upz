@@ -1,69 +1,55 @@
 import axios from 'axios';
 
-const googleApi = 'https://script.google.com/macros/s/';
+/**
+ * Usage example:
+ - https://script.google.com/macros/s/SCRIPT_ID/exec?sheet=programs&tabs=detail,muhsinin&page=2&limit=100&headrow=2
+ - https://script.google.com/macros/s/SCRIPT_ID/exec?sheet=programs&cache=0
+
+ * Real URL
+ - https://script.google.com/macros/s/AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX/exec?sheet=program&tabs=programs,settings&limit=100
+ */
 
 // Main API endpoint
-const mainApi = {
-  file: 'GDrive/UPZ/microsite/00-Programs',
-  instance: axios.create({
-    baseURL: `${googleApi}AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX`,
-    headers: { 'Content-Type': 'application/json' },
-  })
-};
+const API = axios.create({
+  baseURL: 'https://script.google.com/macros/s/AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX',
+  headers: { 'Content-Type': 'application/json' },
+});
 
-// TODO: extract getMainApi to separate getSettings and getProgramsList
-// Cache getProgramsList if possible, use getSettings.version to invalidate cache
+const getSettings = async () => {
+  const response = await API.get('exec?sheet=program&tabs=programs,settings&limit=50');
+  const results = response.data;
 
-const getMainApi = async () => {
-  const responseSettings = await mainApi.instance.get('exec?endpoint=settings');
-  const responsePrograms = await mainApi.instance.get('exec?endpoint=programs');
-
-  const programsList = responsePrograms.data.filter(program => program.id !== '');
+  const programsList = results.programs.data.filter(program => program.id !== '');
 
   return {
-    settings: responseSettings.data,
     programs: programsList,
+    settings: results.settings.data,
   };
 };
 
 // Program API endpoint
 const programApi = {
   'zakat': {
-    file: 'GDrive/UPZ/microsite/01-zakat',
-    instance: axios.create({
-      baseURL: `${googleApi}AKfycbwBT_-eX5f8s9IAUReRqdHNAkK4eV3GDelke1UIEDh0zhDXtRww4SOvdxAn1fYEFnvnQA`,
-      headers: { 'Content-Type': 'application/json' },
-    })
+    apiUrlParam: 'exec?sheet=zakat&tabs=detail,muhsinin,info',
   },
-  // 'infaq': {
-  //   file: 'GDrive/UPZ/microsite/02-infaq',
-  //   instance: axios.create({
-  //     baseURL: `${googleApi}...`,
-  //     headers: { 'Content-Type': 'application/json' },
-  //   })
-  // },
-  // 'wakaf': {
-  //   file: 'GDrive/UPZ/microsite/04-wakaf',
-  //   instance: axios.create({
-  //     baseURL: `${googleApi}...`,
-  //     headers: { 'Content-Type': 'application/json' },
-  //   })
-  // },
 };
 
-const getProgramData = async (codename) => {
-  const responseDetail = await programApi[codename].instance.get('exec?endpoint=detail');
-  const responseMuhsinin = await programApi[codename].instance.get('exec?endpoint=muhsinin');
-  const responseInfo = await programApi[codename].instance.get('exec?endpoint=info');
+const getProgramData = async (sheet, node) => {
+  if (!programApi[sheet] || !programApi[sheet][node]) {
+    throw new Error(`Invalid API endpoint for sheet: ${sheet}, node: ${node}`);
+  }
+
+  const response = await API.get(programApi[sheet][node]);
+  const results = response.data;
 
   return {
-    detail: responseDetail.data,
-    muhsinin: responseMuhsinin.data,
-    info: responseInfo.data,
+    detail: results.detail.data,
+    muhsinin: results.muhsinin.data,
+    info: results.info.data,
   };
 };
 
 export default {
-  getMainApi,
+  getSettings,
   getProgramData,
 };

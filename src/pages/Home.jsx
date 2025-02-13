@@ -7,24 +7,24 @@ const Home = () => {
   const navigate = useNavigate();
 
   const {
-    data: mainData,
-    isLoading: mainDataLoading,
-    error: mainDataError,
+    data: settingsData,
+    isLoading: settingsDataLoading,
+    error: settingsDataError,
   } = useQuery({
-    queryFn: () => api.getMainApi(),
-    queryKey: ['main'],
+    queryFn: () => api.getSettings(),
+    queryKey: ['settings'],
   });
 
-  if (mainDataLoading) return <div>Loading...</div>;
-  if (mainDataError) return <div>Error fetching program: {mainDataError.message}</div>;
+  if (settingsDataLoading) return <div>Loading...</div>;
+  if (settingsDataError) return <div>Error fetching settings: {settingsDataError.message}</div>;
 
-  console.log({mainData});
+  console.log({settingsData});
 
 
   return (
     <div className="upz-page-home">
       <div className="upz-page-home__programs">
-        {mainData.programs.map((program) => (
+        {settingsData.programs.map((program) => (
           program.status && <div key={program.id} className="program-item">
             {program.name} {program.featured && '🔥'}
           </div>
