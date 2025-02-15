@@ -6,10 +6,11 @@ import useBagsStore from './services/useBagsStore';
 import './App.css'
 
 function App() {
+  console.log('=== App.jsx ===');
+
   const { setBags } = useBagsStore();
 
   useEffect(() => {
-    console.log('Setting config in bags:', config); // Debugging
     setBags('config', config);
   }, []);
 

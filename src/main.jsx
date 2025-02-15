@@ -20,9 +20,9 @@ import queryClient from "./services/queryClient";
 import Router from "./Router.jsx";
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  /* <StrictMode> */
     <QueryClientProvider client={queryClient}>
       <Router />
     </QueryClientProvider>
-  </StrictMode>,
+  /* </StrictMode> */
 )
