@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client'
  * - QueryClient: Manages caching, background updates, and other features of React Query.
  */
 import { QueryClientProvider } from '@tanstack/react-query';
-import queryClient from "./services/queryClient";
+import queryClient from "@assanad/services/queryClient";
 
 /**
  * Zustand: Manage global state
@@ -17,7 +17,7 @@ import queryClient from "./services/queryClient";
 // import { create } from "zustand";
 
 
-import Router from "./Router.jsx";
+import Router from "@assanad/Router.jsx";
 
 createRoot(document.getElementById('root')).render(
   /* <StrictMode> */

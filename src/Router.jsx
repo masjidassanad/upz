@@ -1,12 +1,12 @@
 import React from "react";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
-import ErrorBoundary from "./ErrorBoundary";
+import App from "@assanad/App";
+import ErrorBoundary from "@assanad/ErrorBoundary";
 
-import Home from "./pages/Home";
-import Program from "./pages/Program";
-import NotFound from "./pages/NotFound.jsx";
+import Home from "@assanad/pages/Home";
+import Program from "@assanad/pages/Program";
+import NotFound from "@assanad/pages/NotFound.jsx";
 
 // https://reactrouter.com/6.29.0/route/route
 // https://reactrouter.com/6.29.0/route/loader

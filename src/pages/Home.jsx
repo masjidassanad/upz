@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
-import useBagsStore from "../services/useBagsStore";
-import api from "../services/api";
+import useBagsStore from "@assanad/services/useBagsStore";
+import api from "@assanad/services/api";
 
 const Home = () => {
   const navigate = useNavigate();

@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { Outlet } from "react-router-dom";
 
-import config from './config';
-import useBagsStore from './services/useBagsStore';
-import './App.css'
+import config from '@assanad/config';
+import useBagsStore from '@assanad/services/useBagsStore';
+import '@assanad/App.css'
 
 function App() {
   console.log('=== App.jsx ===');
