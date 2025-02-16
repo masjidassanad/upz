@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 import fs from "fs";
 import path from "path";
@@ -12,10 +13,14 @@ export default defineConfig({
       cert: fs.readFileSync(path.resolve(__dirname, "./.dev/localhost-ssl.pem")),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
       "@assanad": path.resolve(__dirname, "./src"),
+      "@qmdz": path.resolve(__dirname, "./src/qmdz"),
     },
   },
   base: '/upz/', // build output assets path: /upz/assets/

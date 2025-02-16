@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import useBagsStore from "@assanad/services/useBagsStore";
 import api from "@assanad/services/api";
 
+import { Button, Text } from "@qmdz/ui";
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -35,7 +37,9 @@ const Home = () => {
   return (
     <div className="upz-page-home">
       <div className="upz-page-home__programs">
-        Test <button onClick={() => navigate('/program/test')}>Test</button>
+        <Text as="h1" variant="display" fontWeight="bold">Home</Text>
+
+        Test <Button onClick={() => navigate('/program/test')}>Test</Button>
         {/* {settingsData.programs.map((program) => (
           program.status && <div key={program.id} className="program-item">
             {program.name} {program.featured && '🔥'}
