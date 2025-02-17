@@ -8,8 +8,6 @@ import Home from "@assanad/pages/Home";
 import Program from "@assanad/pages/Program";
 import NotFound from "@assanad/pages/NotFound.jsx";
 
-// https://reactrouter.com/6.29.0/route/route
-// https://reactrouter.com/6.29.0/route/loader
 const Router = () => {
   console.log('=== Router.jsx ===');
 

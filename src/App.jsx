@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import config from '@assanad/config';
 import useBagsStore from '@assanad/services/useBagsStore';
+
 import '@assanad/App.css'
 
 function App() {
   console.log('=== App.jsx ===');
 
+  const navigate = useNavigate();
   const { setBags } = useBagsStore();
 
   useEffect(() => {
@@ -16,11 +18,23 @@ function App() {
 
   return (
     <div className="upz-app">
-      <p>
-        {config.app.name}
-      </p>
-      <div className="upz-outlet">
+      <div className="upz-app__header">
+        <div as="h1" variant="display">
+          {config.app.name}
+        </div>
+      </div>
+      <div className="upz-main">
         <Outlet />
+      </div>
+      <div className="upz-app__footer">
+      <div>
+        <div className="upz-app__footer-button" onClick={() => navigate('/')}>
+          <div as="div" variant="body">Home</div>
+        </div>
+        <div className="upz-app__footer-button" onClick={() => navigate('/program/checkin')}>
+          <div as="div" variant="body" >Check In</div>
+        </div>
+      </div>
       </div>
     </div>
   )
