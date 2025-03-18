@@ -5,6 +5,7 @@ import App from "@assanad/App";
 import ErrorBoundary from "@assanad/ErrorBoundary";
 
 import Home from "@assanad/pages/Home";
+import Programs from "@assanad/pages/Programs";
 import Program from "@assanad/pages/Program";
 import NotFound from "@assanad/pages/NotFound.jsx";
 
@@ -24,6 +25,10 @@ const Router = () => {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "programs",
+          element: <Programs />,
         },
         {
           path: "program/:codename",

@@ -10,6 +10,10 @@ const Program = () => {
       <div className="upz-page-program__header">
         <h1>{codename}</h1>
       </div>
+
+      <div className="upz-page-program__content">
+        info
+      </div>
     </div>
   );
 };
