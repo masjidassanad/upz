@@ -9,7 +9,7 @@ import axios from 'axios';
  - https://script.google.com/macros/s/AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX/exec?sheet=program&tabs=programs,settings&limit=100
  */
 
-// Main API endpoint
+//=== Main API endpoint ===
 const API = axios.create({
   baseURL: 'https://script.google.com/macros/s/AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX',
   headers: { 'Content-Type': 'application/json' },
@@ -27,7 +27,7 @@ const getSettings = async () => {
   };
 };
 
-// Program API endpoint
+//=== Program API endpoint ===
 const programApi = {
   'zakat': {
     apiUrlParam: 'exec?sheet=zakat&tabs=detail,muhsinin,info',
