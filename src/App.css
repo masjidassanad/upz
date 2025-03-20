@@ -69,10 +69,11 @@ body {
 #root {
   --background-app: #fdfdfd;
 
+  min-height: 100vh;
   max-width: var(--app-base-width);
   margin: 0 auto;
   padding: 0;
-  height: 100vh;
+  padding-bottom: 75px;
   background-color: var(--background-app);
 }
 
@@ -99,6 +100,15 @@ body {
 }
 .gap-200 {
   gap: var(--spacing-200);
+}
+.gap-250 {
+  gap: var(--spacing-250);
+}
+.gap-300 {
+  gap: var(--spacing-300);
+}
+.gap-350 {
+  gap: var(--spacing-350);
 }
 
 .upz-button {
@@ -250,7 +260,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-050);
+  gap: var(--spacing-025);
 }
 .upz-app__footer-nav:hover {
   --color-footer-nav: var(--color-brand-primary-hover);
