@@ -1,19 +1,24 @@
 import { useEffect } from 'react'
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 
+import useBagsStore from "@assanad/services/useBagsStore";
+
 import config from '@assanad/config';
-import useBagsStore from '@assanad/services/useBagsStore';
 
 import '@assanad/App.css'
 
 const App = () => {
   console.log('=== App.jsx ===');
-
   const navigate = useNavigate();
-  const { setBags } = useBagsStore();
+
+  const { getBags, setBags, checkAndFlushBags } = useBagsStore();
 
   useEffect(() => {
-    setBags('config', config);
+    checkAndFlushBags(config.app.version);
+
+    if (!getBags('config')) {
+      setBags('config', config);
+    }
   }, []);
 
   return (
