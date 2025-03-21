@@ -6,12 +6,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 }
 
 :root {
-  --app-width-xs: 480px;
-  --app-width-sm: 640px;
-  --app-width-md: 768px;
-  --app-width-lg: 1024px;
-  --app-width-xl: 1280px;
-
   --spacing-025: 0.25rem;
   --spacing-050: 0.5rem;
   --spacing-075: 0.75rem;
@@ -24,6 +18,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --spacing-400: 4rem;
   --spacing-500: 5rem;
 
+  --color-gray-0: #fff;
   --color-gray-100: #f9f2e9;
   --color-gray-200: #f2f3f4;
   --color-gray-300: #e0e0e0;
@@ -38,8 +33,19 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --color-brand-primary: #552d62;
   --color-brand-primary-hover: #46244f;
   /* --color-brand-primary-light: #d6c7e7; */
-  --color-brand-primary-light: #e2cdf9;
+  /* --color-brand-primary-light: #e2cdf9; */
+  --color-brand-primary-light: #dab8ff;
   --color-brand-secondary: #ffb800;
+
+  --app-background-document: #f9f2e9;
+  --app-background-color: #fdfdfd;
+  --app-background-color: #fff;
+
+  --app-width-xs: 480px;
+  --app-width-sm: 640px;
+  --app-width-md: 768px;
+  --app-width-lg: 1024px;
+  --app-width-xl: 1280px;
 
   --app-base-width: var(--app-width-sm);
   --app-base-spacing: var(--spacing-150);
@@ -56,8 +62,6 @@ html {
 }
 
 body {
-  --background-document: #f9f2e9;
-
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -68,7 +72,7 @@ body {
   margin:0;
   padding:0;
 
-  background-color: var(--background-document);
+  background-color: var(--app-background-document);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,14 +85,12 @@ b, strong {
 }
 
 #root {
-  --background-app: #fdfdfd;
-
   min-height: 100vh;
   max-width: var(--app-base-width);
   margin: 0 auto;
   padding: 0;
-  padding-bottom: 75px;
-  background-color: var(--background-app);
+  padding-bottom: 85px;
+  background-color: var(--app-background-color);
 }
 
 /* ============================== */
@@ -103,6 +105,23 @@ b, strong {
   display: flex;
   flex-direction: row;
 }
+.grid {
+  display: grid;
+}
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
 .gap-base-block {
   gap: var(--app-base-spacing-block);
 }
@@ -133,13 +152,13 @@ b, strong {
 
 .upz-button {
   --background-button: var(--color-brand-primary);
-  --color-button: var(--color-gray-100);
+  --color-button: var(--color-gray-0);
 
   background-color: var(--background-button);
   color: var(--color-button);
   border: none;
   border-radius: 4px;
-  padding: var(--spacing-050) var(--spacing-100);
+  padding: var(--spacing-100) var(--spacing-300);
   cursor: pointer;
 }
 .upz-button:hover {
@@ -192,7 +211,6 @@ b, strong {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-200);
-  height: 100vh;
 }
 
 
@@ -204,7 +222,7 @@ b, strong {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   gap: var(--spacing-100);
 }
 
@@ -238,9 +256,9 @@ b, strong {
 .upz-app__page {
   padding: 0 var(--app-base-spacing);
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: var(--app-base-spacing);
+  gap: var(--app-base-spacing); */
 }
 
 
@@ -268,7 +286,7 @@ b, strong {
 }
 
 .upz-app__footer-nav {
-  --color-footer-nav: var(--color-gray-800);
+  --color-footer-nav: var(--color-gray-900);
 
   color: var(--color-footer-nav);
   font-size: 1.2rem;
@@ -290,10 +308,3 @@ b, strong {
   --color-footer-nav: var(--color-brand-primary);
   background-color: #fff;
 }
-
-.upz-app__footer-nav svg {
-  fill: var(--color-footer-nav);
-  width: 2rem;
-  height: 2rem;
-}
-

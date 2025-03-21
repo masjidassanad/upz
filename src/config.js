@@ -15,7 +15,11 @@ const config = {
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "",
+        "teaser": "Zakat adalah kewajiban bagi setiap Muslim yang mampu untuk membantu mereka yang membutuhkan.",
+        "description": [
+          "<b>Zakat</b> merupakan salah satu rukun Islam yang wajib ditunaikan oleh umat Muslim yang telah memenuhi syarat nisab.",
+          "Dana zakat disalurkan kepada delapan asnaf yang berhak menerima, seperti fakir, miskin, amil, mualaf, dan lainnya."
+        ],
         "banner": "",
         "partner": "",
         "tags": ""
@@ -28,7 +32,11 @@ const config = {
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "",
+        "teaser": "Infaq adalah sumbangan sukarela untuk mendukung berbagai program dakwah dan sosial.",
+        "description": [
+          "Infaq adalah bentuk kedermawanan dalam Islam yang tidak terbatas jumlah maupun waktunya.",
+          "Dana infaq digunakan untuk membiayai program-program dakwah, pendidikan, dan kesejahteraan sosial."
+        ],
         "banner": "",
         "partner": "",
         "tags": ""
@@ -51,7 +59,7 @@ const config = {
         "codename": "wakaf",
         "name": "Wakaf",
         "total": "",
-        "status": true,
+        "status": false,
         "main": true,
         "featured": false,
         "teaser": "",
@@ -106,7 +114,11 @@ const config = {
         "status": true,
         "main": false,
         "featured": false,
-        "teaser": "",
+        "teaser": "Bantuan untuk korban musibah dan jenguk orang sakit sebagai bentuk kepedulian.",
+        "description": [
+          "Program ini bertujuan untuk membantu mereka yang terkena musibah seperti bencana alam atau kecelakaan.",
+          "Selain itu, UPZ juga memberikan perhatian khusus dengan menjenguk saudara-saudara kita yang sedang sakit."
+        ],
         "banner": "",
         "partner": "",
         "tags": ""
@@ -119,20 +131,28 @@ const config = {
         "status": true,
         "main": false,
         "featured": true,
-        "teaser": "",
+        "teaser": "Program penyaluran bantuan kepada dhuafa dan yatim dalam bentuk paket bantuan.",
+        "description": [
+          "Pentasyarufan adalah bentuk kepedulian terhadap kaum dhuafa dan anak yatim dengan memberikan bantuan yang dibutuhkan.",
+          "Bantuan diberikan dalam berbagai bentuk seperti sembako, perlengkapan sekolah, dan bantuan kesehatan."
+        ],
         "banner": "",
         "partner": "",
         "tags": ""
       },
       {
         "id": 12,
-        "codename": "pondok-tahfidz",
-        "name": "Pendirian Pondok Tahfidz",
+        "codename": "pesantren-tahfidz",
+        "name": "Perintisan Pesantren Tahfidz",
         "total": "",
         "status": true,
         "main": false,
         "featured": true,
-        "teaser": "",
+        "teaser": "Mendukung pembangunan dan pengembangan pesantren tahfidz untuk generasi Qur'ani.",
+        "description": [
+          "Program ini mendukung pembangunan pesantren tahfidz yang bertujuan mencetak generasi penghafal Al-Qur'an.",
+          "Bantuan diberikan dalam bentuk dana pembangunan, fasilitas pendidikan, dan beasiswa bagi santri."
+        ],
         "banner": "",
         "partner": "",
         "tags": ""
@@ -158,7 +178,11 @@ const config = {
         "status": false,
         "main": false,
         "featured": false,
-        "teaser": "",
+        "teaser": "Beasiswa bagi santri di rumah tahfidz dan TPQ agar terus belajar tanpa kendala finansial.",
+        "description": [
+          "Program ini memberikan beasiswa kepada santri yang belajar di rumah tahfidz dan TPQ.",
+          "Beasiswa mencakup biaya pendidikan, kitab, serta dukungan kebutuhan lainnya bagi santri berprestasi maupun kurang mampu."
+        ],
         "banner": "",
         "partner": "Rumah Tahfidz, TPQ Nur Islam",
         "tags": ""
@@ -180,7 +204,7 @@ const config = {
     "settings": [
       {
         "group": "app",
-        "code": "setting",
+        "code": "data",
         "key": "version",
         "value": "1.0.0-a.1"
       },
