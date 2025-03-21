@@ -4,10 +4,10 @@ import useBagsStore from "@assanad/services/useBagsStore";
 
 const programsGrid = (data) => {
   return (
-    <div className="upz-page-home__programs grid grid-cols-2 gap-base-inline">
+    <div className="upz-programs-grid">
       {data.map((program) => (
         <div className="flex-column gap-100">
-          <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '1rem'}}></div>
+          <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '.5rem'}}></div>
           <div>{program.name}</div>
           <div className="skeleton skeleton-text"></div>
           <div className="skeleton skeleton-text"></div>
@@ -25,7 +25,7 @@ const Home = () => {
   console.log(programsData);
 
   return (
-    <div className="upz-page-home flex-column gap-base-block">
+    <div className="upz-page-inner upz-page-home">
       <div className="skeleton skeleton-animate" style={{height: '200px', borderRadius: '1rem'}}></div>
 
       <div className="upz-page-home__programs flex-column gap-base-block">

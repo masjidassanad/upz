@@ -143,7 +143,7 @@ const config = {
       {
         "id": 12,
         "codename": "pesantren-tahfidz",
-        "name": "Perintisan Pesantren Tahfidz",
+        "name": "Rintisan Pesantren Tahfidz",
         "total": "",
         "status": true,
         "main": false,

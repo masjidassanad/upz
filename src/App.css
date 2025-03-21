@@ -121,7 +121,6 @@ b, strong {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-
 .gap-base-block {
   gap: var(--app-base-spacing-block);
 }
@@ -204,19 +203,43 @@ b, strong {
   left: -200%;
 }
 
-/* ============================== */
-/* = App = */
-/* ============================== */
+/* === App === */
 .upz-app {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-200);
+  gap: var(--app-base-spacing-block);
+}
+
+.upz-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--app-base-spacing);
+  row-gap: var(--app-base-spacing-block);
+}
+
+/* === Header === */
+.upz-app__header {
+  --background-header: var(--color-brand-primary);
+
+  background-color: var(--background-header);
+  color: var(--color-gray-100);
+  padding: var(--spacing-050) var(--app-base-spacing);
+}
+
+/* === Main content === */
+.upz-app__main {
+  padding: 0 var(--app-base-spacing);
+
+  /*  */
+}
+.upz-page-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-base-spacing-block);
 }
 
 
-/* ============================== */
-/* = Not Found = */
-/* ============================== */
+/* === Not Found */
 .upz-page-notfound {
   display: flex;
   flex-direction: column;
@@ -239,33 +262,8 @@ b, strong {
   margin-top: var(--spacing-200);
 }
 
-/* ============================== */
-/* = Header = */
-/* ============================== */
-.upz-app__header {
-  --background-header: var(--color-brand-primary);
 
-  background-color: var(--background-header);
-  color: var(--color-gray-100);
-  padding: var(--spacing-050) var(--spacing-100);
-}
-
-/* ============================== */
-/* = Page = */
-/* ============================== */
-.upz-app__page {
-  padding: 0 var(--app-base-spacing);
-
-  /* display: flex;
-  flex-direction: column;
-  gap: var(--app-base-spacing); */
-}
-
-
-
-/* ============================== */
-/* = Footer = */
-/* ============================== */
+/* === Footer === */
 .upz-app__footer {
   --background-footer-nav: var(--color-brand-primary-light);
 
