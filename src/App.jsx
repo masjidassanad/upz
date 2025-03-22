@@ -11,12 +11,13 @@ const App = () => {
   console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
+  console.log({config});
 
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
 
-  console.log(import.meta.env.VITE_APP_SUPABASE_URL);
+  // console.log(import.meta.env.VITE_APP_SUPABASE_URL);
 
   useEffect(() => {
     checkAndFlushBags(config.app.version);
@@ -32,7 +33,7 @@ const App = () => {
         <div>{config.app.name}</div>
       </div>
       <div className="upz-app__main">
-        <Outlet />
+        {getBags('config') ? <Outlet /> : <p>Loading...</p>}
       </div>
       <div className="upz-app__footer">
         <div className={`upz-app__footer-nav ${isActive('/') ? 'active' : ''}`} onClick={() => navigate('/')}>

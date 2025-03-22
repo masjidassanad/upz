@@ -238,8 +238,7 @@ b, strong {
   row-gap: var(--app-base-spacing-block);
 }
 .upz-programs-grid p {
-  font-size: 1.25rem;
-  line-height: 1.25;
+  font-size: 1.3rem;
   color: var(--color-gray-700);
 }
 
