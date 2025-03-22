@@ -5,7 +5,7 @@ const Konfirmasi = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="upz-page-konfirmasi">
+    <div className="upz-page-inner upz-page-konfirmasi">
       <div className="upz-page-konfirmasi__header">
         <h1>Konfirmasi</h1>
       </div>

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { set, get } from 'lodash';
 
-const FLUSH_INTERVAL_HOURS = 4; // Set flush interval (e.g., every 4 hours)
+const FLUSH_INTERVAL_HOURS = 1; // Set flush interval (e.g., every x hours)
 
 const useBagsStore = create(
   persist(

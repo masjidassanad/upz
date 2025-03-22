@@ -8,9 +8,10 @@ const programsGrid = (data) => {
       {data.map((program) => (
         <div className="flex-column gap-100">
           <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '.5rem'}}></div>
-          <div>{program.name}</div>
-          <div className="skeleton skeleton-text"></div>
-          <div className="skeleton skeleton-text"></div>
+          <div className="flex-column gap-050">
+            <h5>{program.name}</h5>
+            <p>{program.teaser}</p>
+          </div>
         </div>
       ))}
     </div>
@@ -42,7 +43,7 @@ const Home = () => {
 
         <div className="flex-column gap-100">
           <h3>Rekomendasi Program</h3>
-          {programsGrid(programsData.filter((program) => program.status && !program.main))}
+          {programsGrid(programsData.filter((program) => program.status && program.featured))}
 
           {/* {programsData.map((program) => (
             program.status && !program.main && <div key={program.id} className="program-item">
@@ -53,8 +54,7 @@ const Home = () => {
 
         <div className="flex-column gap-100">
           <h3>Kampanye</h3>
-          <div className="program-item">Kencleng UPZ</div>
-          <div className="program-item">Sedekah sampah</div>
+          {programsGrid(programsData.filter((program) => program.status && program.tags.includes('campaign')))}
         </div>
       </div>
     </div>

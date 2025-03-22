@@ -16,6 +16,8 @@ const App = () => {
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
 
+  console.log(import.meta.env.VITE_APP_SUPABASE_URL);
+
   useEffect(() => {
     checkAndFlushBags(config.app.version);
 

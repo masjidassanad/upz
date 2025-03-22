@@ -6,7 +6,7 @@ const Program = () => {
   const { codename } = useParams();
 
   return (
-    <div className="upz-page-program">
+    <div className="upz-page-inner upz-page-program">
       <div className="upz-page-program__header">
         <h1>{codename}</h1>
       </div>

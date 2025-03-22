@@ -15,105 +15,107 @@ const config = {
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "Zakat adalah kewajiban bagi setiap Muslim yang mampu untuk membantu mereka yang membutuhkan.",
+        "teaser": "Tunaikan zakat untuk menyucikan harta dan jiwa. Jangan tunda kebaikan, karena zakat adalah bentuk ibadah kepada Allah, serta wujud kepedulian dan sumber keberkahan bagi semua.",
         "description": [
           "<b>Zakat</b> merupakan salah satu rukun Islam yang wajib ditunaikan oleh umat Muslim yang telah memenuhi syarat nisab.",
           "Dana zakat disalurkan kepada delapan asnaf yang berhak menerima, seperti fakir, miskin, amil, mualaf, dan lainnya."
         ],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 2,
         "codename": "infaq",
         "name": "Infaq",
-        "total": "",
+        "total": 0,
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "Infaq adalah sumbangan sukarela untuk mendukung berbagai program dakwah dan sosial.",
-        "description": [
-          "Infaq adalah bentuk kedermawanan dalam Islam yang tidak terbatas jumlah maupun waktunya.",
-          "Dana infaq digunakan untuk membiayai program-program dakwah, pendidikan, dan kesejahteraan sosial."
-        ],
+        "teaser": "Wujudkan rasa syukur kita atas nikmat yang telah Allah berikan, berbagi rejeki di jalan dakwan dan membantu saudara-saudara kita yang membutuhkan.",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 3,
         "codename": "sedekah",
         "name": "Sedekah",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 4,
         "codename": "wakaf",
         "name": "Wakaf",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": true,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 5,
         "codename": "hibah",
         "name": "Hibah",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 6,
         "codename": "fidyah",
         "name": "Tunaikan Fidyah",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": "",
         "codename": "",
         "name": "",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 10,
         "codename": "upz-menyapa",
         "name": "UPZ Menyapa",
-        "total": "",
+        "total": 0,
         "status": true,
         "main": false,
-        "featured": false,
+        "featured": true,
         "teaser": "Bantuan untuk korban musibah dan jenguk orang sakit sebagai bentuk kepedulian.",
         "description": [
           "Program ini bertujuan untuk membantu mereka yang terkena musibah seperti bencana alam atau kecelakaan.",
@@ -121,13 +123,13 @@ const config = {
         ],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 11,
         "codename": "tasyaruf",
         "name": "Pentasyarufan",
-        "total": "",
+        "total": 0,
         "status": true,
         "main": false,
         "featured": true,
@@ -138,13 +140,13 @@ const config = {
         ],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 12,
         "codename": "pesantren-tahfidz",
         "name": "Rintisan Pesantren Tahfidz",
-        "total": "",
+        "total": 0,
         "status": true,
         "main": false,
         "featured": true,
@@ -155,26 +157,27 @@ const config = {
         ],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": "",
         "codename": "",
         "name": "",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 30,
         "codename": "beasiswa",
         "name": "Beasiswa Rumah Tahfidz & TPQ",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
@@ -185,20 +188,49 @@ const config = {
         ],
         "banner": "",
         "partner": "Rumah Tahfidz, TPQ Nur Islam",
-        "tags": ""
+        "tags": []
       },
       {
         "id": 31,
         "codename": "ortusan",
         "name": "Orang Tua Santri (ortusan)",
-        "total": "",
+        "total": 0,
         "status": false,
         "main": false,
         "featured": false,
         "teaser": "",
+        "description": [],
         "banner": "",
         "partner": "Tahsin Al-Amin",
-        "tags": ""
+        "tags": []
+      },
+      {
+        "id": 32,
+        "codename": "kencleng",
+        "name": "Kencleng UPZ",
+        "total": 0,
+        "status": true,
+        "main": false,
+        "featured": false,
+        "teaser": "Agar infaq Anda lebih dekat dan lebih cepat. Diambil waktu yang tepat.",
+        "description": [],
+        "banner": "",
+        "partner": "",
+        "tags": ['campaign']
+      },
+      {
+        "id": 33,
+        "codename": "sedekah-sampah-plastik",
+        "name": "Sedekah Sampah Plastik",
+        "total": 0,
+        "status": true,
+        "main": false,
+        "featured": false,
+        "teaser": "Merubah sampah plastik menjadi berkah.",
+        "description": [],
+        "banner": "",
+        "partner": "",
+        "tags": ['campaign']
       }
     ],
     "settings": [
