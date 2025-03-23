@@ -27,39 +27,44 @@ const App = () => {
 
   return (
     <div className="upz-app">
-      <div className="upz-app__header">
-        <div>{config.app.name}</div>
-      </div>
-
       <div className="upz-app__main">
-        {getBags('config') ? <Outlet /> : <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>}
+        <div className="upz-app__header">
+          <div className="upz-app__header-title">{config.app.name}</div>
+          {/* TODO: User login */}
+        </div>
+
+        <div className="upz-app__content">
+          {getBags('config') ? <Outlet /> : <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>}
+        </div>
       </div>
 
       <div className="upz-app__footer">
+        <div className="upz-app__footer-bar">
 
-        <div className={`upz-app__footer-nav ${isActive('/') ? 'active' : ''}`} onClick={() => navigate('/')}>
-          <Icon name="home-alt-2" />
-          <div>Home</div>
-        </div>
-        <div className={`upz-app__footer-nav ${isActive('/zakat') ? 'active' : ''}`} onClick={() => navigate('/zakat')}>
-          <Icon name="archive" />
-          <div>Zakat</div>
-        </div>
-        <div className={`upz-app__footer-nav ${isActive('/infaq') ? 'active' : ''}`} onClick={() => navigate('/infaq')}>
-          {/* <Icon name="donate-blood" /> */}
-          <Icon name="stack-overflow" type="logo" />
-          <div>Infaq</div>
-        </div>
-        <div className={`upz-app__footer-nav ${isActive('/program') ? 'active' : ''}`} onClick={() => navigate('/programs')}>
-          <Icon name="layer" />
-          <div>Donasi</div>
-        </div>
-        {/* TODO: modal */}
-        <div className={`upz-app__footer-nav ${isActive('/kontak') ? 'active' : ''}`} onClick={() => navigate('/kontak')}>
-          <Icon name="chat" />
-          <div>Kontak</div>
-        </div>
+          <div className={`upz-app__footer-nav ${isActive('/') ? 'active' : ''}`} onClick={() => navigate('/')}>
+            <Icon name="home-alt-2" />
+            <div>Home</div>
+          </div>
+          <div className={`upz-app__footer-nav ${isActive('/ziswah') ? 'active' : ''}`} onClick={() => navigate('/ziswah')}>
+            <Icon name="box" />
+            <div>ZISWAH</div>
+          </div>
+          <div className={`upz-app__footer-nav nav-action-pay ${isActive('/checkout') ? 'active' : ''}`} onClick={() => navigate('/checkout')}>
+            <Icon name="plus-circle" />
+            <div>Bayar</div>
+          </div>
+          <div className={`upz-app__footer-nav ${isActive('/donasi') ? 'active' : ''}`} onClick={() => navigate('/donasi')}>
+            {/* <Icon name="donate-heart" /> */}
+            <Icon name="layer" />
+            <div>Donasi</div>
+          </div>
+          {/* TODO: modal */}
+          <div className={`upz-app__footer-nav ${isActive('/kontak') ? 'active' : ''}`} onClick={() => navigate('/kontak')}>
+            <Icon name="chat" />
+            <div>Kontak</div>
+          </div>
 
+        </div>
       </div>
     </div>
   )
