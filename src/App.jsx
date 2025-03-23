@@ -11,7 +11,7 @@ const App = () => {
   // console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
-  console.log({config, supabaseUrl: import.meta.env.VITE_APP_SUPABASE_URL});
+  console.log({config});
 
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
 

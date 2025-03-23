@@ -14,7 +14,7 @@ export default defineConfig({
           key: fs.readFileSync(keyPath),
           cert: fs.readFileSync(certPath),
         }
-      : false, // Disable HTTPS if files are missing
+      : false, // Disable HTTPS if keys are missing
   },
   plugins: [
     react(),

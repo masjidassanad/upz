@@ -12,7 +12,7 @@ const Program = () => {
       </div>
 
       <div className="upz-page-program__content">
-        info test deploy 9
+        info
       </div>
     </div>
   );
