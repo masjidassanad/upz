@@ -17,7 +17,7 @@ const App = () => {
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
 
-  // console.log(import.meta.env.VITE_APP_SUPABASE_URL);
+  console.log(import.meta.env.VITE_APP_SUPABASE_URL);
 
   useEffect(() => {
     checkAndFlushBags(config.app.version);
@@ -54,7 +54,7 @@ const App = () => {
         </div>
         <div className={`upz-app__footer-nav ${isActive('/program') ? 'active' : ''}`} onClick={() => navigate('/programs')}>
           <Icon name="layer" />
-          <div>Program</div>
+          <div>Donasi</div>
         </div>
         {/* TODO: modal */}
         <div className={`upz-app__footer-nav ${isActive('/kontak') ? 'active' : ''}`} onClick={() => navigate('/kontak')}>
