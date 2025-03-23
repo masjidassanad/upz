@@ -8,7 +8,7 @@ import '@assanad/App.css'
 import { Icon, IconLoading } from '@assanad/elements/Icon';
 
 const App = () => {
-  console.log('=== App.jsx ===');
+  // console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
   console.log({config, supabaseUrl: import.meta.env.VITE_APP_SUPABASE_URL});
