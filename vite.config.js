@@ -4,13 +4,17 @@ import react from '@vitejs/plugin-react'
 import fs from "fs";
 import path from "path";
 
-// https://vite.dev/config/
+const keyPath = path.resolve(__dirname, "./.dev/localhost-ssl-key.pem");
+const certPath = path.resolve(__dirname, "./.dev/localhost-ssl.pem");
+
 export default defineConfig({
   server: {
-    https: {
-      key: fs.readFileSync(path.resolve(__dirname, "./.dev/localhost-ssl-key.pem")),
-      cert: fs.readFileSync(path.resolve(__dirname, "./.dev/localhost-ssl.pem")),
-    },
+    https: fs.existsSync(keyPath) && fs.existsSync(certPath)
+      ? {
+          key: fs.readFileSync(keyPath),
+          cert: fs.readFileSync(certPath),
+        }
+      : false, // Disable HTTPS if files are missing
   },
   plugins: [
     react(),
@@ -22,6 +26,6 @@ export default defineConfig({
   },
   base: '/upz/', // build output assets path: /upz/assets/
   build: {
-    outDir: path.resolve(__dirname, "./docs"), // Github pages "www" folder
+    outDir: path.resolve(__dirname, "./docs"), // GitHub Pages "www" folder
   },
 })
