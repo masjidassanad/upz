@@ -1,7 +1,7 @@
 const config = {
   app: {
     name: 'UPZ Masjid Assanad',
-    version: '1.0.2',
+    version: '1.0.2-dev.1',
     author: 'UPZ Masjid Assanad',
     url: 'https://masjidassanad.github.io',
   },
