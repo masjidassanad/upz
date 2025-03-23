@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { set, get } from 'lodash';
 
-const FLUSH_INTERVAL_HOURS = 1; // Set flush interval (e.g., every x hours)
+const FLUSH_INTERVAL_HOURS = 6; // Set flush interval (e.g., every x hours)
 
 const useBagsStore = create(
   persist(
@@ -62,12 +62,12 @@ const useBagsStore = create(
 
         // Purge if stored version is different from API version
         if (apiVersion && appVersion !== apiVersion) {
-          console.log(`Version changed from ${appVersion} to ${apiVersion}, flushing store...`);
+          console.log(`UPZ Masjid Assanad -- Data version changed, purging data...`);
           getState().flushBags();
 
         // Purge if data is too old (e.g., expired after X hours)
         } else if (elapsedHours >= FLUSH_INTERVAL_HOURS) {
-          console.log(`Data expired after ${FLUSH_INTERVAL_HOURS} hours, flushing store...`);
+          console.log(`UPZ Masjid Assanad -- Data expired after ${FLUSH_INTERVAL_HOURS} hours, purging data...`);
           getState().flushBags();
         }
 

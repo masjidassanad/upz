@@ -11,13 +11,11 @@ const App = () => {
   console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
-  console.log({config});
+  console.log({config, supabaseUrl: import.meta.env.VITE_APP_SUPABASE_URL});
 
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
-
-  console.log(import.meta.env.VITE_APP_SUPABASE_URL);
 
   useEffect(() => {
     checkAndFlushBags(config.app.version);

@@ -23,7 +23,7 @@ const Home = () => {
   const { getBags } = useBagsStore();
 
   const programsData = getBags('config.tempData.programs');
-  console.log(programsData);
+  // console.log(programsData);
 
   return (
     <div className="upz-page-inner upz-page-home">

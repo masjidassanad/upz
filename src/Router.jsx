@@ -15,7 +15,7 @@ import Konfirmasi from "@assanad/pages/Konfirmasi";
 import NotFound from "@assanad/pages/NotFound.jsx";
 
 const Router = () => {
-  console.log('=== Router.jsx ===');
+  // console.log('=== Router.jsx ===');
 
   const router = createHashRouter([
     {
