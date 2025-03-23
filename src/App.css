@@ -82,18 +82,21 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 h1 {
-  font-size: 2.4rem;
+  font-size: 3.2rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 h3 {
-  font-size: 1.8rem;
+  font-size: 2.0rem;
 }
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 h5 {
+  font-size: 1.6rem;
+}
+h6 {
   font-size: 1.4rem;
 }
 p {
@@ -125,6 +128,7 @@ b, strong {
 .flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .grid {
   display: grid;
@@ -311,8 +315,9 @@ b, strong {
   color: var(--color-footer-nav);
   font-size: 1.2rem;
   font-weight: 500;
-  padding: var(--spacing-050) var(--spacing-100);
+  padding: var(--spacing-050) var(--spacing-050);
   border-radius: 6px;
+  min-width: 64px;
 
   display: flex;
   flex-direction: column;

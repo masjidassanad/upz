@@ -9,7 +9,7 @@ const programsGrid = (data) => {
         <div className="flex-column gap-100">
           <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '.5rem'}}></div>
           <div className="flex-column gap-050">
-            <h5>{program.name}</h5>
+            <h4>{program.name}</h4>
             <p>{program.teaser}</p>
           </div>
         </div>
@@ -31,7 +31,7 @@ const Home = () => {
 
       <div className="upz-page-home__programs flex-column gap-base-block">
         <div className="flex-column gap-100">
-          <h3>Program Utama</h3>
+          <h2>Program Utama</h2>
           {programsGrid(programsData.filter((program) => program.status && program.main))}
 
           {/* {programsData.map((program) => (
@@ -42,7 +42,7 @@ const Home = () => {
         </div>
 
         <div className="flex-column gap-100">
-          <h3>Rekomendasi Program</h3>
+          <h2>Rekomendasi Program</h2>
           {programsGrid(programsData.filter((program) => program.status && program.featured))}
 
           {/* {programsData.map((program) => (
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
 
         <div className="flex-column gap-100">
-          <h3>Kampanye</h3>
+          <h2>Kampanye</h2>
           {programsGrid(programsData.filter((program) => program.status && program.tags.includes('campaign')))}
         </div>
       </div>

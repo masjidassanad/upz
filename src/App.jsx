@@ -5,7 +5,7 @@ import useBagsStore from "@assanad/services/useBagsStore";
 import config from '@assanad/config';
 import '@assanad/App.css'
 
-import Icon from '@assanad/elements/Icon';
+import { Icon, IconLoading } from '@assanad/elements/Icon';
 
 const App = () => {
   console.log('=== App.jsx ===');
@@ -32,10 +32,13 @@ const App = () => {
       <div className="upz-app__header">
         <div>{config.app.name}</div>
       </div>
+
       <div className="upz-app__main">
-        {getBags('config') ? <Outlet /> : <p>Loading...</p>}
+        {getBags('config') ? <Outlet /> : <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>}
       </div>
+
       <div className="upz-app__footer">
+
         <div className={`upz-app__footer-nav ${isActive('/') ? 'active' : ''}`} onClick={() => navigate('/')}>
           <Icon name="home-alt-2" />
           <div>Home</div>
@@ -58,6 +61,7 @@ const App = () => {
           <Icon name="chat" />
           <div>Kontak</div>
         </div>
+
       </div>
     </div>
   )

@@ -58,17 +58,16 @@ const useBagsStore = create(
        */
       checkAndFlushBags: (apiVersion = null) => {
         const { lastUpdated, appVersion } = getState();
+        const elapsedHours = (Date.now() - (lastUpdated || 0)) / (1000 * 60 * 60);
 
-        // Check if stored version is different from API version
+        // Purge if stored version is different from API version
         if (apiVersion && appVersion !== apiVersion) {
           console.log(`Version changed from ${appVersion} to ${apiVersion}, flushing store...`);
           getState().flushBags();
-        }
 
-        // Check if data is too old (e.g., expired after X hours)
-        const elapsedHours = (Date.now() - (lastUpdated || 0)) / (1000 * 60 * 60);
-        if (elapsedHours >= FLUSH_INTERVAL_HOURS) {
-          console.log(`Data expired after ${elapsedHours} hours, flushing store...`);
+        // Purge if data is too old (e.g., expired after X hours)
+        } else if (elapsedHours >= FLUSH_INTERVAL_HOURS) {
+          console.log(`Data expired after ${FLUSH_INTERVAL_HOURS} hours, flushing store...`);
           getState().flushBags();
         }
 

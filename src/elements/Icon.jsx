@@ -2,7 +2,7 @@ import React from "react";
 
 import 'boxicons/css/boxicons.min.css';
 
-const Icon = ({ name, type = 'solid', size = 'md', className }) => {
+const Icon = ({ name, type = 'solid', size = 'md', spin = false, className }) => {
   const iconType = type === 'solid' ? 'bxs' : (type === 'logo' ? 'bxl' : 'bx');
   const iconName = `${iconType}-${name}`;
   const iconSize = {
@@ -12,7 +12,11 @@ const Icon = ({ name, type = 'solid', size = 'md', className }) => {
     lg: 'bx-lg',
   }[size];
 
-  return <i className={`bx ${iconName} ${iconSize} ${className}`}></i>;
+  return <i className={`bx ${iconName} ${iconSize} ${spin ? 'bx-spin' : ''} ${className}`}></i>;
 };
 
-export default Icon;
+const IconLoading = ({ size = 'lg' }) => {
+  return <Icon name="loader" type="default" size={size} spin />;
+};
+
+export { Icon, IconLoading };
