@@ -1,7 +1,7 @@
 const config = {
   app: {
     name: 'UPZ Masjid Assanad',
-    version: '1.0.1',
+    version: '1.0.2',
     author: 'UPZ Masjid Assanad',
     url: 'https://masjidassanad.github.io',
   },
@@ -15,7 +15,7 @@ const config = {
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "Tunaikan zakat untuk menyucikan harta dan jiwa. Jangan tunda kebaikan, karena zakat adalah bentuk ibadah kepada Allah, serta wujud kepedulian dan sumber keberkahan bagi semua.",
+        "teaser": "Ada hak orang lain dalam harta kita, bersihkan dengan berzakat.",
         "description": [
           "<b>Zakat</b> merupakan salah satu rukun Islam yang wajib ditunaikan oleh umat Muslim yang telah memenuhi syarat nisab.",
           "Dana zakat disalurkan kepada delapan asnaf yang berhak menerima, seperti fakir, miskin, amil, mualaf, dan lainnya."
@@ -32,7 +32,7 @@ const config = {
         "status": true,
         "main": true,
         "featured": false,
-        "teaser": "Wujudkan rasa syukur kita atas nikmat yang telah Allah berikan, berbagi rejeki di jalan dakwan dan membantu saudara-saudara kita yang membutuhkan.",
+        "teaser": "Sedekahkan sebagian harta benda Anda bagi mereka yang membutuhkan.",
         "description": [],
         "banner": "",
         "partner": "",
@@ -116,7 +116,7 @@ const config = {
         "status": true,
         "main": false,
         "featured": true,
-        "teaser": "Bantuan untuk korban musibah dan jenguk orang sakit sebagai bentuk kepedulian.",
+        "teaser": "Program santunan dan dakwah sosial.",
         "description": [
           "Program ini bertujuan untuk membantu mereka yang terkena musibah seperti bencana alam atau kecelakaan.",
           "Selain itu, UPZ juga memberikan perhatian khusus dengan menjenguk saudara-saudara kita yang sedang sakit."
@@ -133,7 +133,7 @@ const config = {
         "status": true,
         "main": false,
         "featured": true,
-        "teaser": "Program penyaluran bantuan kepada dhuafa dan yatim dalam bentuk paket bantuan.",
+        "teaser": "Program penyaluran bantuan kepada dhuafa dan yatim.",
         "description": [
           "Pentasyarufan adalah bentuk kepedulian terhadap kaum dhuafa dan anak yatim dengan memberikan bantuan yang dibutuhkan.",
           "Bantuan diberikan dalam berbagai bentuk seperti sembako, perlengkapan sekolah, dan bantuan kesehatan."
@@ -150,7 +150,7 @@ const config = {
         "status": true,
         "main": false,
         "featured": true,
-        "teaser": "Mendukung pembangunan dan pengembangan pesantren tahfidz untuk generasi Qur'ani.",
+        "teaser": "Dukung perintisan pesantren tahfidz di wilayah Jati, Mulur.",
         "description": [
           "Program ini mendukung pembangunan pesantren tahfidz yang bertujuan mencetak generasi penghafal Al-Qur'an.",
           "Bantuan diberikan dalam bentuk dana pembangunan, fasilitas pendidikan, dan beasiswa bagi santri."
