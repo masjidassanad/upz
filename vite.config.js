@@ -26,6 +26,6 @@ export default defineConfig({
   },
   base: '/upz/', // build output assets path: /upz/assets/
   build: {
-    outDir: path.resolve(__dirname, "./public"),
+    outDir: path.resolve(__dirname, "./docs"),
   },
 })
