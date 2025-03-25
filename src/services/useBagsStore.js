@@ -56,23 +56,21 @@ const useBagsStore = create(
       /**
        * Function to check and flush bags if they are older than FLUSH_INTERVAL_HOURS
        */
-      checkAndFlushBags: (apiVersion = null) => {
-        const { lastUpdated, appVersion } = getState();
-        const elapsedHours = (Date.now() - (lastUpdated || 0)) / (1000 * 60 * 60);
+      checkAndFlushBags: (dataVersion = null) => {
+        if (!dataVersion) return;
 
-        // Purge if stored version is different from API version
-        if (apiVersion && appVersion !== apiVersion) {
-          console.log(`UPZ Masjid Assanad -- Data version changed, purging data...`);
-          getState().flushBags();
+        const { lastUpdated, cacheVersion } = getState();
+        const shouldFlush =
+          cacheVersion !== dataVersion || // Version changed
+          (Date.now() - (lastUpdated || 0)) / (1000 * 60 * 60) >= FLUSH_INTERVAL_HOURS; // Data expired
 
-        // Purge if data is too old (e.g., expired after X hours)
-        } else if (elapsedHours >= FLUSH_INTERVAL_HOURS) {
-          console.log(`UPZ Masjid Assanad -- Data expired after ${FLUSH_INTERVAL_HOURS} hours, purging data...`);
-          getState().flushBags();
-        }
+        if (!shouldFlush) return;
 
-        // Update the stored version and last updated time
-        setState({ appVersion: apiVersion || appVersion, lastUpdated: Date.now() });
+        getState().flushBags();
+        setState({
+          cacheVersion: dataVersion,
+          lastUpdated: Date.now()
+        });
       },
     }),
     {
