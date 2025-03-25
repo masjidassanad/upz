@@ -5,7 +5,7 @@ import api from "@assanad/services/api";
 Hook for fetching settings data
 
 Example:
-import { useSettingsData } from "@assanad/services/useData";
+import { useSettingsData } from "@assanad/services/useDataGoogleSheet";
 const { data: settingsData, isLoading, error } = useSettingsData();
 
 useEffect(() => {
@@ -39,7 +39,7 @@ export const useSettingsData = () => {
 Hook for fetching program data
 
 Example:
-import { useProgramData } from "@assanad/services/useData";
+import { useProgramData } from "@assanad/services/useDataGoogleSheet";
 const { data: programData, isLoading, error } = useProgramData('zakat', 'apiUrlParam');
 
 useEffect(() => {

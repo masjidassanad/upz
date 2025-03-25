@@ -10,13 +10,13 @@ import axios from 'axios';
  */
 
 //=== Main API endpoint ===
-const API = axios.create({
+const apiNode = axios.create({
   baseURL: 'https://script.google.com/macros/s/AKfycbxF4dytodtfMhzGJJTxSPrQTMYa63G1N1Ei3dK09RdG5eS0UKQFBU2lrvpS7OrFTEqX',
   headers: { 'Content-Type': 'application/json' },
 });
 
 const getSettings = async () => {
-  const response = await API.get('exec?sheet=program&tabs=programs,settings&limit=50');
+  const response = await apiNode.get('exec?sheet=program&tabs=programs,settings&limit=50');
   const results = response.data;
 
   const programsList = results.programs.data.filter(program => program.id !== '');
@@ -39,7 +39,7 @@ const getProgramData = async (sheet, node) => {
     throw new Error(`Invalid API endpoint for sheet: ${sheet}, node: ${node}`);
   }
 
-  const response = await API.get(programApi[sheet][node]);
+  const response = await apiNode.get(programApi[sheet][node]);
   const results = response.data;
 
   return {

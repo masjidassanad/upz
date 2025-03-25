@@ -36,7 +36,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   /* --color-brand-primary-light: #dab8ff; */
   /* --color-brand-primary-light: #e2cdf9; */
   --color-brand-primary-light: #e2c7ff;
-  --color-brand-secondary: #ffb800;
+  --color-brand-secondary: #ffb904;
 
   --app-background-document: #f9f2e9;
   --app-background-color: #fdfdfd;
@@ -62,7 +62,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
   --app-base-font-size: 1.6rem;
   --app-base-font-weight: 400;
-  --app-base-font-weight-bold: 600;
+  --app-base-font-weight-bold: 500;
 }
 
 html {
@@ -188,6 +188,9 @@ b, strong {
 .gap-350 {
   gap: var(--spacing-350);
 }
+.gap-400 {
+  gap: var(--spacing-400);
+}
 
 .upz-button {
   --background-button: var(--color-brand-primary);
@@ -202,6 +205,17 @@ b, strong {
 }
 .upz-button:hover {
   background-color: var(--color-brand-primary-hover);
+}
+.upz-button.btn-sm {
+  font-size: 1.4rem;
+  padding: var(--spacing-050) var(--spacing-150);
+}
+.upz-button.btn-plain {
+  background-color: transparent;
+  color: var(--color-gray-800);
+}
+.upz-button.btn-plain:hover {
+  background-color: var(--color-gray-200);
 }
 
 .upz-tagline {
@@ -259,7 +273,7 @@ b, strong {
 
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-gray-700) var(--color-gray-300);
+  scrollbar-color: var(--color-gray-600) var(--color-gray-300);
   -ms-overflow-style: none;
 
   display: flex;
@@ -274,7 +288,7 @@ b, strong {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--app-base-spacing);
-  row-gap: var(--app-base-spacing-block);
+  row-gap: var(--app-base-spacing);
 }
 .upz-programs-grid p {
   font-size: 1.3rem;

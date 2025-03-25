@@ -6,9 +6,9 @@ const NotFound = () => {
 
   return (
     <div className="upz-page-notfound">
-      <div className="upz-page-notfound__title">404</div>
-      <div className="upz-page-notfound__subtitle">The page you are looking for does not exist.</div>
-      <button className="upz-button upz-page-notfound__button" onClick={() => navigate('/')}>Go to Home</button>
+      <div className="upz-page-notfound__title">Oops!</div>
+      <div className="upz-page-notfound__subtitle">Halaman yang Anda cari tidak ditemukan.</div>
+      <button className="upz-button upz-page-notfound__button" onClick={() => navigate('/')}>Kembali ke Beranda</button>
     </div>
   );
 };

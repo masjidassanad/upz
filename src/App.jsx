@@ -5,36 +5,64 @@ import useBagsStore from "@assanad/services/useBagsStore";
 import config from '@assanad/config';
 import '@assanad/App.css'
 
+import { useInitData } from "@assanad/services/useDataSupabase";
 import { Icon, IconLoading } from '@assanad/elements/Icon';
 
 const App = () => {
   // console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
-  console.log({config});
-
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
+  // console.log({config});
+
+  const { data: initData, isLoading, error } = useInitData();
+  // console.log({ initData });
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
 
   useEffect(() => {
-    checkAndFlushBags(config.app.version);
+    checkAndFlushBags(config.app.version + '-d.' + (initData?.settings?.data?.version || ''));
 
     if (!getBags('config')) {
       setBags('config', config);
     }
-  }, []);
+    if (!getBags('data')) {
+      setBags('data', initData);
+    }
+  }, [initData]);
+
+  console.log(getBags());
+
+  if (isLoading) {
+    return (
+      <div className="upz-app">
+        <div className="upz-app__main upz-app__main-loading">
+          <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="upz-app">
+        <div className="upz-app__main upz-app__main-error">
+          <h2 className="text-danger">Error loading data, please try again later.</h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="upz-app">
       <div className="upz-app__main">
         <div className="upz-app__header">
-          <div className="upz-app__header-title">{config.app.name}</div>
+          <div className="upz-app__header-title">{getBags('data.settings.app.title') || config.app.name}</div>
           {/* TODO: User login */}
         </div>
 
         <div className="upz-app__content">
-          {getBags('config') ? <Outlet /> : <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>}
+          <Outlet />
         </div>
       </div>
 

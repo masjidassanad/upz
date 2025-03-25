@@ -16,7 +16,7 @@ const Icon = ({ name, type = 'solid', size = 'md', spin = false, className = '' 
 };
 
 const IconLoading = ({ size = 'lg' }) => {
-  return <Icon name="loader" type="default" size={size} spin />;
+  return <Icon name="loader" type="default" size={size} spin={true} />;
 };
 
 export { Icon, IconLoading };
