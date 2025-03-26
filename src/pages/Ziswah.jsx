@@ -1,8 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useBagsStore from "@assanad/services/useBagsStore";
+import ProgramsGrid from "@assanad/elements/ProgramsGrid";
 
 const Ziswah = () => {
   const navigate = useNavigate();
+  const { getBags } = useBagsStore();
+  const programsData = getBags('programs', []);
 
   return (
     <div className="upz-page-inner upz-page-zakat">
@@ -12,7 +16,12 @@ const Ziswah = () => {
       </div>
 
       <div className="upz-page-ziswah__content">
-        info
+        <ProgramsGrid
+            data={programsData.filter((program) =>
+              program.status === 'publish'
+              && program.category === 'ziswah'
+            )}
+          />
       </div>
     </div>
   );

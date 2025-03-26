@@ -1,27 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import useBagsStore from "@assanad/services/useBagsStore";
 
-const programsGrid = (data) => {
-  return (
-    <div className="upz-programs-grid">
-      {data.map((program, index) => (
-        <div className="flex-column gap-075" key={program.codename}>
-          <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '.5rem'}}></div>
-          <div className="flex-column gap-025">
-            <h4>{program.title}</h4>
-            {program.teaser && <p>{program.teaser}</p>}
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
+import ProgramsGrid from "@assanad/elements/ProgramsGrid";
 
 const Home = () => {
   const navigate = useNavigate();
   const { getBags } = useBagsStore();
-
   const programsData = getBags('programs', []);
   // console.log(programsData);
 
@@ -29,7 +14,7 @@ const Home = () => {
     <div className="upz-page-inner upz-page-home">
       <div className="skeleton skeleton-animate" style={{height: '200px', borderRadius: '1rem'}}></div>
 
-      <div className="flex-column gap-250">
+      <div className="flex-column gap-300">
 
         <div className="flex-column gap-100">
           <div className="flex-row gap-050" style={{justifyContent: 'space-between'}}>
@@ -40,13 +25,13 @@ const Home = () => {
               </button>
             </div>
           </div>
-          {programsGrid(
-            programsData.filter((program) =>
+          <ProgramsGrid
+            data={programsData.filter((program) =>
               program.status === 'publish'
               && program.category === 'ziswah'
               && program.featured
-            )
-          )}
+            )}
+          />
         </div>
 
         <div className="flex-column gap-100">
@@ -58,24 +43,24 @@ const Home = () => {
               </button>
             </div>
           </div>
-          {programsGrid(
-            programsData.filter((program) =>
+          <ProgramsGrid
+            data={programsData.filter((program) =>
               program.status === 'publish'
               && program.category === 'donasi'
               && program.featured
-            )
-          )}
+            )}
+          />
         </div>
 
         <div className="flex-column gap-100">
           <h2>Kampanye</h2>
-          {programsGrid(
-            programsData.filter((program) =>
+          <ProgramsGrid
+            data={programsData.filter((program) =>
               program.status === 'publish'
               && program.category === 'kampanye'
               && program.featured
-            )
-          )}
+            )}
+          />
         </div>
 
       </div>

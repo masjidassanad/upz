@@ -1,8 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useBagsStore from "@assanad/services/useBagsStore";
+import ProgramsGrid from "@assanad/elements/ProgramsGrid";
 
 const DonasiListing = () => {
   const navigate = useNavigate();
+  const { getBags } = useBagsStore();
+  const programsData = getBags('programs', []);
 
   return (
     <div className="upz-page-inner upz-page-donasiListing">
@@ -11,7 +15,12 @@ const DonasiListing = () => {
       </div>
 
       <div className="upz-page-programs__content">
-        Coming Soon <button onClick={() => navigate('/donasi/coming-soon')}>view program</button>
+        <ProgramsGrid
+            data={programsData.filter((program) =>
+              program.status === 'publish'
+              && program.category === 'donasi'
+            )}
+          />
       </div>
 
     </div>
