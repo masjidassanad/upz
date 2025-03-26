@@ -9,8 +9,8 @@ const programsGrid = (data) => {
         <div className="flex-column gap-075" key={program.codename}>
           <div className="skeleton skeleton-animate" style={{height: '125px', borderRadius: '.5rem'}}></div>
           <div className="flex-column gap-025">
-            <h4>{program.name}</h4>
-            <p>{program.teaser}</p>
+            <h4>{program.title}</h4>
+            {program.teaser && <p>{program.teaser}</p>}
           </div>
         </div>
       ))}
@@ -22,9 +22,8 @@ const Home = () => {
   const navigate = useNavigate();
   const { getBags } = useBagsStore();
 
-  const programsData = getBags('config.tempData.programs');
+  const programsData = getBags('programs', []);
   // console.log(programsData);
-
 
   return (
     <div className="upz-page-inner upz-page-home">
@@ -41,7 +40,13 @@ const Home = () => {
               </button>
             </div>
           </div>
-          {programsGrid(programsData.filter((program) => program.status && program.main))}
+          {programsGrid(
+            programsData.filter((program) =>
+              program.status === 'publish'
+              && program.category === 'ziswah'
+              && program.featured
+            )
+          )}
         </div>
 
         <div className="flex-column gap-100">
@@ -53,12 +58,24 @@ const Home = () => {
               </button>
             </div>
           </div>
-          {programsGrid(programsData.filter((program) => program.status && program.featured))}
+          {programsGrid(
+            programsData.filter((program) =>
+              program.status === 'publish'
+              && program.category === 'donasi'
+              && program.featured
+            )
+          )}
         </div>
 
         <div className="flex-column gap-100">
           <h2>Kampanye</h2>
-          {programsGrid(programsData.filter((program) => program.status && program.tags.includes('campaign')))}
+          {programsGrid(
+            programsData.filter((program) =>
+              program.status === 'publish'
+              && program.category === 'kampanye'
+              && program.featured
+            )
+          )}
         </div>
 
       </div>

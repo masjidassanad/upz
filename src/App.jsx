@@ -15,29 +15,34 @@ const App = () => {
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
   // console.log({config});
 
-  const { data: initData, isLoading, error } = useInitData();
-  // console.log({ initData });
-
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
+  const { data: initData, isLoading, error } = useInitData();
 
   useEffect(() => {
-    checkAndFlushBags(config.app.version + '-d.' + (initData?.settings?.data?.version || ''));
+    if (initData) {
+      checkAndFlushBags(config.app.version + '-d.' + (initData?.settings?.data?.version || ''));
 
-    if (!getBags('config')) {
-      setBags('config', config);
-    }
-    if (!getBags('data')) {
-      setBags('data', initData);
+      if (!getBags('config')) {
+        setBags('config', config);
+      }
+
+      for (const key in initData) {
+        setBags(key, initData[key]);
+      }
     }
   }, [initData]);
 
-  console.log(getBags());
 
   if (isLoading) {
     return (
       <div className="upz-app">
         <div className="upz-app__main upz-app__main-loading">
-          <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>
+          <div className="upz-app__header">
+            <div className="upz-app__header-title">{config.app.name}</div>
+          </div>
+          <div className="upz-app__content">
+            <h2 className="flex-row gap-100"><IconLoading /> Loading...</h2>
+          </div>
         </div>
       </div>
     );
@@ -57,7 +62,7 @@ const App = () => {
     <div className="upz-app">
       <div className="upz-app__main">
         <div className="upz-app__header">
-          <div className="upz-app__header-title">{getBags('data.settings.app.title') || config.app.name}</div>
+          <div className="upz-app__header-title">{getBags('settings.app.title', config.app.name)}</div>
           {/* TODO: User login */}
         </div>
 
