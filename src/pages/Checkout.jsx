@@ -30,8 +30,8 @@ const Checkout = () => {
   return (
     <div className="upz-page-inner upz-page-checkout">
       <div className="upz-page-checkout__header">
-        <h1>Info Transfer</h1>
-        <p className="upz-tagline">Pembayaran ZISWAH dan donasi program</p>
+        <h1 className="upz-page-title">Info Transfer</h1>
+        <p className="upz-page-title-tagline">Pembayaran ZISWAH dan donasi program</p>
       </div>
 
       <div className="upz-page-content upz-page-checkout__content">

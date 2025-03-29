@@ -26,9 +26,9 @@ const MapAssanad = () => {
         <img
           src={imageMapAssanad}
           alt="Masjid Jamik Abdurrahman As Sanad"
-          style={{width: '90%', border: '1px solid var(--color-gray-300)', borderRadius: '5px'}}
+          style={{width: '100%', border: '1px solid var(--color-gray-300)', borderRadius: '5px'}}
         />
-        <span
+        {/* <span
           className="flex-row gap-050"
           style={{
             fontSize: '1.2rem',
@@ -38,7 +38,7 @@ const MapAssanad = () => {
         >
           <Icon name="map" size="sm" />
           8V57+J65 - Masjid Jamik Abdurrahman As Sanaad
-        </span>
+        </span> */}
       </a>
     </div>
   );
@@ -49,15 +49,15 @@ const Kontak = () => {
 
   return (
     <div className="upz-page-inner upz-page-kontak">
-      <div className="upz-page-kontak__header">
-        <h1>Kontak</h1>
-        {/* <p className="upz-tagline">Hubungi kami melalui kontak dibawah</p> */}
+      <div className="upz-page-header upz-page-kontak__header">
+        <h1 className="upz-page-title">Kontak</h1>
+        {/* <p className="upz-page-title-tagline">Hubungi kami melalui kontak dibawah</p> */}
       </div>
 
       <div className="upz-page-content upz-page-kontak__content">
         <div className="flex-column gap-150">
           <div className="flex-column">
-            <h3 className="upz-program-section-title">Unit Pelayanan Zakat</h3>
+            <h3 className="upz-program-section-title">Unit Pengumpul Zakat (UPZ)</h3>
             <h5 className="upz-program-section-tagline">SK BAZNAS: 490/BAZNAS-SKH/VIII/2024</h5>
           </div>
 
@@ -70,7 +70,25 @@ const Kontak = () => {
               <ul>
                 <li>Penunaian Zakat, Infak, Sedekah, Wakaf, dan Hibah.</li>
                 <li>Pembayaran Zakat Fitrah dan Fidyah.</li>
+                <li>Program dakwah sosial, pendidikan, kesehatan, dan ekonomi.</li>
                 <li>Program donasi bantuan, santunan dan pemberdayaan umat.</li>
+              </ul>
+            </span>
+          </div>
+
+          <div className="flex-row gap-100" style={{alignItems: 'flex-start'}}>
+            <span style={{color: 'var(--color-gray-800)'}}><Icon name="book-content" size="md" /></span>
+            <span className="flex-column gap-025">
+              <h5>Jam Pelayanan</h5>
+              <ul>
+                <li>Senin - Sabtu</li>
+                <li>Pukul 08.00 - 12.00 WIB</li>
+                <li>
+                  <div>Telepon: 0851 7515 0088</div>
+                  <div style={{fontSize: '1.2rem', color: 'var(--color-gray-700)'}}>
+                    * Menerima layanan jemput donasi
+                  </div>
+                </li>
               </ul>
             </span>
           </div>
@@ -79,14 +97,21 @@ const Kontak = () => {
             <span style={{color: 'var(--color-gray-800)'}}><Icon name="map-pin" size="md" /></span>
             <div className="flex-column gap-025">
               <h5>Alamat</h5>
-              <div className="flex-column gap-100">
-                <div>
-                  Komplek Masjid Jamik Abdurrahman As-Sanad Jati<br />
-                  Jati RT. 03 RW. 06, Mulur, Kec. Bendosari,<br />
-                  Kabupaten Sukoharjo, Jawa Tengah 57528
+              <div className="flex-row gap-100">
+                <div style={{width: '46%'}}>
+                  <MapAssanad />
                 </div>
-
-                <MapAssanad />
+                <div className="flex-column gap-050">
+                  <h6>
+                    Komplek Masjid Jamik<br />
+                    Abdurrahman As-Sanad
+                  </h6>
+                  <p>
+                    Jati RT. 03 RW. 06, Mulur, <br />
+                    Kec. Bendosari, Kab. Sukoharjo, <br />
+                    Jawa Tengah 57528
+                  </p>
+                </div>
               </div>
             </div>
           </div>

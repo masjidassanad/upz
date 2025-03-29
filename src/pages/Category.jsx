@@ -11,9 +11,9 @@ const Category = () => {
 
   return (
     <div className="upz-page-inner upz-page-category">
-      <div className="upz-page-category__header">
-        <h1>Ziswah</h1>
-        <p className="upz-tagline">Zakat, Infaq, Shadaqah, Wakaf dan Hibah</p>
+      <div className="upz-page-header upz-page-category__header">
+        <h1 className="upz-page-title">Ziswah</h1>
+        <p className="upz-page-title-tagline">Zakat, Infaq, Shadaqah, Wakaf dan Hibah</p>
       </div>
 
       <div className="upz-page-category__content">

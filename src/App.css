@@ -309,13 +309,6 @@ ul, ol {
   display: none;
 }
 
-/* TODO: page title */
-.upz-tagline {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--color-gray-700);
-}
-
 .upz-program-section-title {
   font-size: 2.1rem;
   font-weight: 300;
@@ -366,9 +359,11 @@ ul, ol {
   --background-header: var(--color-brand-primary);
 
   height: var(--app-header-height);
-  background-color: var(--background-header);
   color: var(--color-gray-100);
   padding: var(--spacing-050) var(--app-base-spacing);
+  background-color: var(--background-header);
+  background-image: linear-gradient(225deg, #4b1d76 0%, #6b26a4 74%);
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -382,19 +377,33 @@ ul, ol {
 
 /* === Main content === */
 .upz-app__content {
-  padding: var(--app-base-spacing) var(--app-base-spacing) var(--app-base-spacing-half);
-}
-.upz-page-inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--app-base-spacing-block);
+  padding: var(--spacing-200) var(--app-base-spacing) var(--app-base-spacing-half);
 }
 .upz-page-content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-250);
 }
-
+.upz-page-inner {
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--app-base-spacing-block); */
+  gap: var(--spacing-250);
+}
+.upz-page-header {
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-050);
+}
+.upz-page-title {
+  line-height: 1;
+}
+.upz-page-title-tagline {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--color-gray-700);
+}
 
 /* Not Found */
 .upz-page-notfound {
@@ -437,6 +446,7 @@ ul, ol {
   height: var(--app-footer-height);
   padding: var(--app-base-spacing-half) 0;
   background-color: var(--background-footer-nav);
+  background-image: linear-gradient(0deg, #c586f1 0%, #d2a9f4 74%);
 
   position: absolute;
   bottom: 0;
@@ -453,14 +463,14 @@ ul, ol {
 .upz-app__footer-nav {
   --color-footer-nav: var(--color-gray-700);
   --color-footer-nav: #67369b;
-  --color-footer-nav: #7c3cc0;
+  --color-footer-nav: #7e34cd;
 
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.1;
   color: var(--color-footer-nav);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, .3);
 
   padding: var(--spacing-050) var(--spacing-050);
   border-radius: 6px;
@@ -491,6 +501,8 @@ ul, ol {
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
   background-color: var(--color-brand-primary);
+  background-image: linear-gradient(-30deg, #4b1d76 0%, #722cab 74%);
+
   gap: .3rem;
   width: 76px;
   height: 50px;
