@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Icon } from '@assanad/elements/Icon';
 
-import imageQris from "@assanad/assets/qris-upz-assanad.jpeg";
 import WhatsappButton from "@assanad/elements/WhatsappButton";
+import imageQris from "@assanad/assets/qris-upz-assanad.jpeg";
 
 const Checkout = () => {
   const navigate = useNavigate();

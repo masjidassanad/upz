@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProgramsGrid = ({data}) => {
+import imageBannerMain from "@assanad/assets/banner/main-banner-upz-masjid-abdurrahman-assanad-jati.png";
+
+const ProgramsGrid = ({data, dataBanners = []}) => {
   const navigate = useNavigate();
 
   return (
@@ -13,7 +15,9 @@ const ProgramsGrid = ({data}) => {
           // onClick={() => navigate(`/${program.category}/${program.codename}`)}
           onClick={() => navigate(`/checkout`)}
         >
-          <div className="skeleton skeleton-animate" style={{height: '110px', borderRadius: '.5rem'}}></div>
+          <div className="skeleton">
+            <img src={dataBanners[program.codename] || imageBannerMain} alt="Banner UPZ Masjid Abdurrahman Assanad Jati" />
+          </div>
           <div className="flex-column gap-025">
             <h4 className="upz-programs-grid-title">{program.title}</h4>
             {program.teaser && <p className="upz-programs-grid-teaser">{program.teaser}</p>}

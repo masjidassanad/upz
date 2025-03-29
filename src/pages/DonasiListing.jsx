@@ -1,8 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useBagsStore from "@assanad/services/useBagsStore";
 
+import useBagsStore from "@assanad/services/useBagsStore";
 import ProgramsGrid from "@assanad/elements/ProgramsGrid";
+
+import imageBannerDonasi_upzMenyapa from "@assanad/assets/banner/donasi-banner-upz-menyapa.png";
+import imageBannerDonasi_upzPentasyarufan from "@assanad/assets/banner/donasi-banner-upz-pentasyarufan.png";
+import imageBannerDonasi_upzPesantrenTahfidz from "@assanad/assets/banner/donasi-banner-upz-pesantren-tahfidz.png";
+
+const dataBanners = {
+  'upz-menyapa': imageBannerDonasi_upzMenyapa,
+  'upz-pentasyarufan': imageBannerDonasi_upzPentasyarufan,
+  'upz-pesantren-tahfidz': imageBannerDonasi_upzPesantrenTahfidz,
+}
 
 const DonasiListing = () => {
   const navigate = useNavigate();
@@ -21,6 +31,7 @@ const DonasiListing = () => {
               program.status === 'publish'
               && program.category === 'donasi'
             )}
+            dataBanners={dataBanners}
           />
       </div>
 

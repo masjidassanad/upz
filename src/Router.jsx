@@ -35,14 +35,14 @@ const Router = () => {
           path: "ziswah",
           element: <Ziswah />,
         },
-        {
-          path: "ziswah/zakat",
-          element: <Zakat />,
-        },
-        {
-          path: "ziswah/infaq",
-          element: <Infaq />,
-        },
+        // {
+        //   path: "ziswah/zakat",
+        //   element: <Zakat />,
+        // },
+        // {
+        //   path: "ziswah/infaq",
+        //   element: <Infaq />,
+        // },
         {
           path: "donasi",
           element: <DonasiListing />,

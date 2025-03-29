@@ -51,7 +51,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --app-width-xl: 1280px;
 
 
-  --app-base-width: var(--app-width-sm);
+  --app-base-width: 560px;
   --app-base-spacing: var(--spacing-150);
   --app-base-spacing-block: var(--spacing-200);
   --app-base-spacing-half: calc(var(--app-base-spacing) / 2);
@@ -254,14 +254,16 @@ ul, ol {
   background: var(--color-gray-300);
   border-radius: 2px;
   overflow: hidden;
-  min-height: 1rem;
+  min-height: 5rem;
+  line-height: 0;
+  border-radius: .3rem;
 }
 .skeleton-animate::after {
   content: "";
   position: absolute;
   top: 0;
   left: -150%;
-  width: 200%;
+  width: 150%;
   height: 100%;
   background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 60%);
   animation: shimmer 2s infinite ease-in-out;
@@ -446,7 +448,7 @@ ul, ol {
   height: var(--app-footer-height);
   padding: var(--app-base-spacing-half) 0;
   background-color: var(--background-footer-nav);
-  background-image: linear-gradient(0deg, #c586f1 0%, #d2a9f4 74%);
+  background-image: linear-gradient(0deg, #c38bea 0%, #d2a9f4 74%);
 
   position: absolute;
   bottom: 0;
@@ -463,7 +465,7 @@ ul, ol {
 .upz-app__footer-nav {
   --color-footer-nav: var(--color-gray-700);
   --color-footer-nav: #67369b;
-  --color-footer-nav: #7e34cd;
+  --color-footer-nav: #500f95;
 
   font-size: 1.1rem;
   font-weight: 500;
@@ -491,6 +493,7 @@ ul, ol {
 }
 .upz-app__footer-nav.active {
   --color-footer-nav: var(--color-brand-primary);
+  --color-footer-nav: #500f95;
   background-color: #fff;
 }
 
@@ -505,8 +508,8 @@ ul, ol {
 
   gap: .3rem;
   width: 76px;
-  height: 50px;
-  margin-top: -18px;
+  height: 56px;
+  margin-top: -14px;
   border-radius: 6px;
   box-shadow: 2px 1px 3px rgba(0, 0, 0, .2);
 }

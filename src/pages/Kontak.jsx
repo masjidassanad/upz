@@ -37,7 +37,7 @@ const MapAssanad = () => {
           }}
         >
           <Icon name="map" size="sm" />
-          8V57+J65 - Masjid Jamik Abdurrahman As Sanaad
+          8V57+J65 - Masjid Jamik Abdurrahman As-Sanad
         </span> */}
       </a>
     </div>
