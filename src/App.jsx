@@ -32,7 +32,6 @@ const App = () => {
     }
   }, [initData]);
 
-
   if (isLoading) {
     return (
       <div className="upz-app">
@@ -92,7 +91,6 @@ const App = () => {
             <Icon name="layer" />
             <div>Donasi</div>
           </div>
-          {/* TODO: modal */}
           <div className={`upz-app__footer-nav ${isActive('/kontak') ? 'active' : ''}`} onClick={() => navigate('/kontak')}>
             <Icon name="chat" />
             <div>Kontak</div>

@@ -108,8 +108,9 @@ h6 {
   font-size: 1.4rem;
 }
 
-p {
+p, ul, ol {
   margin: 0;
+  padding: 0;
 }
 b, strong {
   font-weight: var(--app-base-font-weight-bold);
@@ -117,6 +118,9 @@ b, strong {
 img {
   max-width: 100%;
   height: auto;
+}
+ul, ol {
+  padding-left: 1.5rem;
 }
 
 
@@ -221,6 +225,12 @@ img {
   font-size: 1.3rem;
   padding: var(--spacing-050) var(--spacing-150);
 }
+.upz-button.btn-xs {
+  font-size: 1.2rem;
+  padding: var(--spacing-025) var(--spacing-050);
+}
+
+
 .upz-button.btn-plain {
   color: var(--color-gray-800);
   background-color: transparent;
@@ -310,6 +320,12 @@ img {
   letter-spacing: -0.025em;
   color: var(--color-gray-900);
 }
+.upz-program-section-tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  color: var(--color-gray-800);
+}
 
 .upz-programs-grid {
   display: grid;
@@ -374,7 +390,7 @@ img {
 .upz-page-content {
   display: flex;
   flex-direction: column;
-  gap: var(--app-base-spacing-block);
+  gap: var(--spacing-250);
 }
 
 
