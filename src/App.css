@@ -31,7 +31,9 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --color-gray-1000: #000000;
 
   --color-brand-primary: #552d62;
+  --color-brand-primary: #65257a;
   --color-brand-primary-hover: #46244f;
+  --color-brand-primary-hover: #4f265d;
   /* --color-brand-primary-light: #d6c7e7; */
   /* --color-brand-primary-light: #dab8ff; */
   /* --color-brand-primary-light: #e2cdf9; */
@@ -450,11 +452,16 @@ ul, ol {
 
 .upz-app__footer-nav {
   --color-footer-nav: var(--color-gray-700);
+  --color-footer-nav: #67369b;
+  --color-footer-nav: #7c3cc0;
 
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.1;
   color: var(--color-footer-nav);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);
+
   padding: var(--spacing-050) var(--spacing-050);
   border-radius: 6px;
   width: 52px;

@@ -81,7 +81,7 @@ const Kontak = () => {
               <h5>Alamat</h5>
               <div className="flex-column gap-100">
                 <div>
-                  Komplek Masjid Jami' Abdurrahman As-Sanad Jati<br />
+                  Komplek Masjid Jamik Abdurrahman As-Sanad Jati<br />
                   Jati RT. 03 RW. 06, Mulur, Kec. Bendosari,<br />
                   Kabupaten Sukoharjo, Jawa Tengah 57528
                 </div>

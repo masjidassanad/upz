@@ -57,7 +57,7 @@ const Checkout = () => {
               <div style={{minHeight: '210px'}}>
                 <img
                   src={imageQris}
-                  alt="QRIS UPZ Masjid Jamik Abdurrahman Assanad"
+                  alt="QRIS UPZ Masjid Jami' Abdurrahman Assanad"
                   style={{border: '1px solid var(--color-gray-300)', borderRadius: '5px'}}
                 />
               </div>
