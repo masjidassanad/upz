@@ -83,8 +83,9 @@ const App = () => {
             <div>ZISWAH</div>
           </div>
           <div className={`upz-app__footer-nav nav-action-pay ${isActive('/checkout') ? 'active' : ''}`} onClick={() => navigate('/checkout')}>
-            <Icon name="plus-circle" />
-            <div>Bayar</div>
+            {/* <Icon name="plus-circle" /> */}
+            <div>INFO</div>
+            <div className="nav-action-pay-tagline">TRANSFER</div>
           </div>
           <div className={`upz-app__footer-nav ${isActive('/donasi') ? 'active' : ''}`} onClick={() => navigate('/donasi')}>
             {/* <Icon name="donate-heart" /> */}

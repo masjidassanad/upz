@@ -14,11 +14,11 @@ const Home = () => {
     <div className="upz-page-inner upz-page-home">
       <div className="skeleton skeleton-animate" style={{height: '200px', borderRadius: '1rem'}}></div>
 
-      <div className="flex-column gap-300">
+      <div className="flex-column gap-250">
 
         <div className="flex-column gap-100">
           <div className="flex-row gap-050" style={{justifyContent: 'space-between'}}>
-            <h2>Program ZISWAH</h2>
+            <h2 className="upz-program-section-title">Program ZISWAH</h2>
             <div className="flex-row gap-050">
               <button className="upz-button btn-sm btn-plain" onClick={() => navigate('/ziswah')}>
                 <span>Lihat Semua</span>
@@ -36,7 +36,7 @@ const Home = () => {
 
         <div className="flex-column gap-100">
           <div className="flex-row gap-050" style={{justifyContent: 'space-between'}}>
-            <h2>Donasi Program</h2>
+            <h2 className="upz-program-section-title">Donasi Program</h2>
             <div className="flex-row gap-050">
               <button className="upz-button btn-sm btn-plain" onClick={() => navigate('/donasi')}>
                 <span>Lihat Semua</span>
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
 
         <div className="flex-column gap-100">
-          <h2>Kampanye</h2>
+          <h2 className="upz-program-section-title">Kampanye</h2>
           <ProgramsGrid
             data={programsData.filter((program) =>
               program.status === 'publish'
