@@ -24,6 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
         env:
+          VITE_APP_URL: ${{ secrets.VITE_APP_URL }}
           VITE_APP_URL_ASSETS: ${{ secrets.VITE_APP_URL_ASSETS }}
           VITE_APP_SUPABASE_URL: ${{ secrets.VITE_APP_SUPABASE_URL }}
           VITE_APP_SUPABASE_KEY: ${{ secrets.VITE_APP_SUPABASE_KEY }}
