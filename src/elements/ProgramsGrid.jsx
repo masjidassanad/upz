@@ -27,7 +27,7 @@ const ProgramsGrid = ({data, dataBanners = [], onClick = null}) => {
             <img
               className="skeleton-img-fit"
               src={dataBanners[program.codename] || imageBannerMain}
-              alt="Banner UPZ Masjid Abdurrahman Assanad Jati"
+              alt={`Banner ${program.title} - UPZ Masjid Abdurrahman Assanad Jati`}
               loading="lazy"
             />
             <div className="skeleton skeleton-animate"/>
