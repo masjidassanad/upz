@@ -26,7 +26,6 @@ const MapAssanad = () => {
         <img
           src={imageMapAssanad}
           alt="Masjid Jamik Abdurrahman As Sanad"
-          style={{width: '100%', border: '1px solid var(--color-gray-300)', borderRadius: '5px'}}
         />
         {/* <span
           className="flex-row gap-050"
@@ -97,26 +96,26 @@ const Kontak = () => {
             <span style={{color: 'var(--color-gray-800)'}}><Icon name="map-pin" size="md" /></span>
             <div className="flex-column gap-025">
               <h5>Alamat</h5>
-              <div className="flex-row gap-100">
-                <div style={{width: '46%'}}>
+              <div className="flex-column gap-100">
+                <div style={{
+                    width: '70%',
+                    borderRadius: '5px',
+                    border: '1px solid var(--color-gray-300)',
+                }}>
                   <MapAssanad />
                 </div>
                 <div className="flex-column gap-050">
-                  <h6>
-                    Komplek Masjid Jamik<br />
-                    Abdurrahman As-Sanad
-                  </h6>
+                  <h6>Komplek Masjid Jamik Abdurrahman As-Sanad</h6>
                   <p>
-                    Jati RT. 03 RW. 06, Mulur, <br />
-                    Kec. Bendosari, Kab. Sukoharjo, <br />
-                    Jawa Tengah 57528
+                    Jati RT. 03 RW. 06, Mulur, Kec. Bendosari, <br />
+                    Kab. Sukoharjo, Jawa Tengah 57528
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="upz-page-checkout__footer" style={{margin: '2.5rem 20vw 0'}}>
+          <div className="upz-page-checkout__footer" style={{margin: '2.5rem auto 0'}}>
             <WhatsappButton
               message="Assalamu'alaikum warahmatullahi wabarakatuh,[br]Saya ingin mengetahui informasi mengenai zakat, infak, dan program kebaikan di UPZ Masjid Jami' Abdurrahman Assanad Jati.[br]Terima kasih."
               style={{fontSize: '1.8rem'}}

@@ -10,6 +10,8 @@ import imageBannerZiswah_infaq from "@assanad/assets/banner/ziswah-banner-infaq.
 import imageBannerDonasi_upzMenyapa from "@assanad/assets/banner/donasi-banner-upz-menyapa.png";
 import imageBannerDonasi_upzPentasyarufan from "@assanad/assets/banner/donasi-banner-upz-pentasyarufan.png";
 import imageBannerDonasi_upzPesantrenTahfidz from "@assanad/assets/banner/donasi-banner-upz-pesantren-tahfidz.png";
+import imageBannerKampanye_upzSampahPlastik from "@assanad/assets/banner/kampanye-banner-upz-sampah-plastik.png";
+import imageBannerKampanye_upzKencleng from "@assanad/assets/banner/kampanye-banner-upz-kencleng.png";
 
 const dataBanners = {
   ziswah: {
@@ -20,6 +22,10 @@ const dataBanners = {
     'upz-menyapa': imageBannerDonasi_upzMenyapa,
     'upz-pentasyarufan': imageBannerDonasi_upzPentasyarufan,
     'upz-pesantren-tahfidz': imageBannerDonasi_upzPesantrenTahfidz,
+  },
+  kampanye: {
+    'upz-sampah-plastik': imageBannerKampanye_upzSampahPlastik,
+    'upz-kencleng': imageBannerKampanye_upzKencleng,
   },
 }
 
@@ -38,7 +44,7 @@ const Home = () => {
           lineHeight: 0,
           borderRadius: '.75rem',
         }}>
-        <img src={imageBannerMain} alt="Banner UPZ Masjid Abdurrahman Assanad Jati" />
+        <img src={imageBannerMain} alt="Banner UPZ Masjid Abdurrahman Assanad Jati" loading="lazy" />
       </div>
 
       <div className="flex-column gap-250">
@@ -89,6 +95,8 @@ const Home = () => {
               && program.category === 'kampanye'
               && program.featured
             )}
+            dataBanners={dataBanners.kampanye}
+            onClick={(program) => navigate(`/kampanye/${program.codename}`)}
           />
         </div>
 

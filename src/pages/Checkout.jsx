@@ -39,7 +39,7 @@ const Checkout = () => {
           <h3 className="upz-program-section-title">Transfer Bank</h3>
 
           <p>
-            Silahkan transfer ke nomor rekening berikut dan konfirmasi transfer melalui tombol di bawah.
+            Silahkan transfer ke nomor rekening berikut:
           </p>
 
           <div className="upz-code-box flex-column">
@@ -54,11 +54,12 @@ const Checkout = () => {
 
           <div className="flex-row gap-200" style={{alignItems: 'flex-start'}}>
             <div className="flex-column gap-100" style={{maxWidth: '150px'}}>
-              <div style={{minHeight: '210px'}}>
+              <div style={{minHeight: '216px', minWidth: '150px', lineHeight: '0'}}>
                 <img
                   src={imageQris}
                   alt="QRIS UPZ Masjid Jami' Abdurrahman Assanad"
                   style={{border: '1px solid var(--color-gray-300)', borderRadius: '5px'}}
+                  loading="lazy"
                 />
               </div>
             </div>

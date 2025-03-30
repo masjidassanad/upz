@@ -6,10 +6,11 @@ import ErrorBoundary from "@assanad/ErrorBoundary";
 
 import Home from "@assanad/pages/Home";
 import Ziswah from "@assanad/pages/Ziswah";
-import Zakat from "@assanad/pages/Zakat";
-import Infaq from "@assanad/pages/Infaq";
+// import Zakat from "@assanad/pages/Zakat";
+// import Infaq from "@assanad/pages/Infaq";
 import DonasiListing from "@assanad/pages/DonasiListing";
 import DonasiPage from "@assanad/pages/DonasiPage";
+import KampanyePage from "@assanad/pages/KampanyePage";
 import Kontak from "@assanad/pages/Kontak";
 import Checkout from "@assanad/pages/Checkout";
 import NotFound from "@assanad/pages/NotFound.jsx";
@@ -52,6 +53,10 @@ const Router = () => {
           element: <DonasiPage />,
         },
         {
+          path: "kampanye/:codename",
+          element: <KampanyePage />,
+        },
+        {
           path: "kontak",
           element: <Kontak />,
         },
@@ -59,10 +64,10 @@ const Router = () => {
           path: "checkout",
           element: <Checkout />,
         },
-        {
-          path: "checkout/:codename",
-          element: <Checkout />,
-        },
+        // {
+        //   path: "checkout/:codename",
+        //   element: <Checkout />,
+        // },
       ],
     },
   ], {
