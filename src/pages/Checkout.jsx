@@ -80,7 +80,7 @@ const Checkout = () => {
           </div>
         </div>
 
-        <div className="upz-page-checkout__footer" style={{margin: '20px 11vw 0'}}>
+        <div className="upz-page-checkout__footer" style={{margin: '20px auto 0'}}>
             <WhatsappButton
               message="Assalamu'alaikum warahmatullahi wabarakatuh,[br]Saya ingin mengkonfirmasi pembayaran ziswah dan donasi program.[br][br]Program: ...[br]Atas nama: ...[br]Jumlah: ...[br][br]Bukti transaksi terlampir, terima kasih."
               style={{fontSize: '1.8rem'}}
