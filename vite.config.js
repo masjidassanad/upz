@@ -8,6 +8,9 @@ const keyPath = path.resolve(__dirname, "./.dev/localhost-ssl-key.pem");
 const certPath = path.resolve(__dirname, "./.dev/localhost-ssl.pem");
 
 export default defineConfig({
+  plugins: [
+    react(),
+  ],
   server: {
     https: fs.existsSync(keyPath) && fs.existsSync(certPath)
       ? {
@@ -16,16 +19,19 @@ export default defineConfig({
         }
       : false, // Disable HTTPS if keys are missing
   },
-  plugins: [
-    react(),
-  ],
   resolve: {
     alias: {
       "@assanad": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/upz/', // build output assets path: /upz/assets/
+  base: process.env.VITE_APP_URL || '/',
   build: {
     outDir: path.resolve(__dirname, "./dist"),
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
   },
 })
