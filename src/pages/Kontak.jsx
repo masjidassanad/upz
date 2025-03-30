@@ -115,7 +115,7 @@ const Kontak = () => {
             </div>
           </div>
 
-          <div className="upz-page-checkout__footer" style={{margin: '2.5rem auto 0'}}>
+          <div className="upz-page-checkout__footer" style={{margin: '2.5rem auto 0px'}}>
             <WhatsappButton
               message="Assalamu'alaikum warahmatullahi wabarakatuh,[br]Saya ingin mengetahui informasi mengenai zakat, infak, dan program kebaikan di UPZ Masjid Jami' Abdurrahman Assanad Jati.[br]Terima kasih."
               style={{fontSize: '1.8rem'}}

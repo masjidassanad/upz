@@ -16,8 +16,6 @@ import Checkout from "@assanad/pages/Checkout";
 import NotFound from "@assanad/pages/NotFound.jsx";
 
 const Router = () => {
-  // console.log('=== Router.jsx ===');
-
   const router = createHashRouter([
     {
       path: "/",

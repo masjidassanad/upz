@@ -8,8 +8,19 @@ import '@assanad/App.css'
 import { useInitData } from "@assanad/services/useDataSupabase";
 import { Icon, IconLoading } from '@assanad/elements/Icon';
 
+// Autoload assets path: banner/
+const bannerModules = import.meta.glob('@assanad/assets/banner/banner-*.png', {
+  eager: true,
+  import: 'default'
+});
+const BANNER_MAP = Object.fromEntries(
+  Object.entries(bannerModules).map(([path, url]) => [
+    path.match(/banner-(.*?)\.png/)[1],
+    url
+  ])
+);
+
 const App = () => {
-  // console.log('=== App.jsx ===');
   const navigate = useNavigate();
   const location = useLocation();
   const isActive = (path) => path === '/' ? location.pathname === path : location.pathname.startsWith(path);
@@ -27,6 +38,12 @@ const App = () => {
       }
 
       for (const key in initData) {
+        if (key === 'programs') {
+          for (const program of initData[key]) {
+            program._banner = BANNER_MAP[`${program.category}-${program.codename}`];
+          }
+        }
+
         setBags(key, initData[key]);
       }
     }
