@@ -16,7 +16,6 @@ const dataBanners = {
   'zakat-profesi': imageBannerZiswah_zakatProfesi,
   'zakat-perdagangan': imageBannerZiswah_zakatPerdagangan,
   'wakaf': imageBannerZiswah_wakaf,
-  'wakaf': `${import.meta.env.VITE_APP_URL_ASSETS}banner/ziswah-banner-wakaf.png`,
 }
 
 const Ziswah = () => {
