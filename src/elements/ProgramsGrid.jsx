@@ -30,6 +30,7 @@ const ProgramsGrid = ({data, dataBanners = [], onClick = null}) => {
               alt="Banner UPZ Masjid Abdurrahman Assanad Jati"
               loading="lazy"
             />
+            <div className="skeleton skeleton-animate"/>
           </div>
           <div className="flex-column gap-025">
             <h4 className="upz-programs-grid-title">{program.title}</h4>

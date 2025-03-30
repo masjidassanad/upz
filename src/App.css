@@ -263,6 +263,21 @@ ul, ol {
   height: 100px;
   /* object-fit: cover; */
   object-fit: fill;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+}
+.skeleton .skeleton-animate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
 }
 .skeleton-animate::after {
   content: "";
