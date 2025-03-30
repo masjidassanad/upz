@@ -24,14 +24,8 @@ export default defineConfig({
       "@assanad": path.resolve(__dirname, "./src"),
     },
   },
-  base: process.env.VITE_APP_URL || '/',
+  base: '/upz/', // build output assets path: /upz/assets/
   build: {
     outDir: path.resolve(__dirname, "./dist"),
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name]-[hash].[ext]'
-      }
-    }
   },
 })

@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import useBagsStore from "@assanad/services/useBagsStore";
 
-import imagePosterKampanye_upzKencleng from "@assanad/assets/poster/poster-kampanye-upz-kencleng.jpg";
-import imagePosterKampanye_upzSampahPlastik from "@assanad/assets/poster/poster-kampanye-upz-sampah-plastik.jpg";
+import imagePosterKampanye_upzKencleng from "@assanad/assets/poster/kampanye-poster-upz-kencleng.jpg";
+import imagePosterKampanye_upzSampahPlastik from "@assanad/assets/poster/kampanye-poster-upz-sampah-plastik.jpg";
 
 const dataPosters = {
   'upz-kencleng': imagePosterKampanye_upzKencleng,

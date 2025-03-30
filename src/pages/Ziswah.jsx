@@ -4,6 +4,21 @@ import { useNavigate } from "react-router-dom";
 import useBagsStore from "@assanad/services/useBagsStore";
 import ProgramsGrid from "@assanad/elements/ProgramsGrid";
 
+import imageBannerZiswah_zakatMaal from "@assanad/assets/banner/ziswah-banner-zakat.png";
+import imageBannerZiswah_infaq from "@assanad/assets/banner/ziswah-banner-infaq.png";
+import imageBannerZiswah_zakatProfesi from "@assanad/assets/banner/ziswah-banner-zakat-profesi.png";
+import imageBannerZiswah_zakatPerdagangan from "@assanad/assets/banner/ziswah-banner-zakat-perdagangan.png";
+import imageBannerZiswah_wakaf from "@assanad/assets/banner/ziswah-banner-wakaf.png";
+
+const dataBanners = {
+  'zakat': imageBannerZiswah_zakatMaal,
+  'infaq': imageBannerZiswah_infaq,
+  'zakat-profesi': imageBannerZiswah_zakatProfesi,
+  'zakat-perdagangan': imageBannerZiswah_zakatPerdagangan,
+  'wakaf': imageBannerZiswah_wakaf,
+  'wakaf': `${import.meta.env.VITE_APP_URL_ASSETS}banner/ziswah-banner-wakaf.png`,
+}
+
 const Ziswah = () => {
   const navigate = useNavigate();
   const { getBags } = useBagsStore();
@@ -22,6 +37,7 @@ const Ziswah = () => {
               program.status === 'publish'
               && program.category === 'ziswah'
             )}
+            dataBanners={dataBanners}
           />
       </div>
     </div>

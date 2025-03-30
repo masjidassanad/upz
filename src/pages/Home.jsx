@@ -5,6 +5,29 @@ import useBagsStore from "@assanad/services/useBagsStore";
 import ProgramsGrid from "@assanad/elements/ProgramsGrid";
 
 import imageBannerMain from "@assanad/assets/banner/main-banner-upz-masjid-abdurrahman-assanad-jati.png";
+import imageBannerZiswah_zakatMaal from "@assanad/assets/banner/ziswah-banner-zakat.png";
+import imageBannerZiswah_infaq from "@assanad/assets/banner/ziswah-banner-infaq.png";
+import imageBannerDonasi_upzMenyapa from "@assanad/assets/banner/donasi-banner-upz-menyapa.png";
+import imageBannerDonasi_upzPentasyarufan from "@assanad/assets/banner/donasi-banner-upz-pentasyarufan.png";
+import imageBannerDonasi_upzPesantrenTahfidz from "@assanad/assets/banner/donasi-banner-upz-pesantren-tahfidz.png";
+import imageBannerKampanye_upzSampahPlastik from "@assanad/assets/banner/kampanye-banner-upz-sampah-plastik.png";
+import imageBannerKampanye_upzKencleng from "@assanad/assets/banner/kampanye-banner-upz-kencleng.png";
+
+const dataBanners = {
+  ziswah: {
+    'zakat': imageBannerZiswah_zakatMaal,
+    'infaq': imageBannerZiswah_infaq,
+  },
+  donasi: {
+    'upz-menyapa': imageBannerDonasi_upzMenyapa,
+    'upz-pentasyarufan': imageBannerDonasi_upzPentasyarufan,
+    'upz-pesantren-tahfidz': imageBannerDonasi_upzPesantrenTahfidz,
+  },
+  kampanye: {
+    'upz-sampah-plastik': imageBannerKampanye_upzSampahPlastik,
+    'upz-kencleng': imageBannerKampanye_upzKencleng,
+  },
+}
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,6 +64,7 @@ const Home = () => {
               && program.category === 'ziswah'
               && program.featured
             )}
+            dataBanners={dataBanners.ziswah}
           />
         </div>
 
@@ -59,6 +83,7 @@ const Home = () => {
               && program.category === 'donasi'
               && program.featured
             )}
+            dataBanners={dataBanners.donasi}
           />
         </div>
 
@@ -70,6 +95,7 @@ const Home = () => {
               && program.category === 'kampanye'
               && program.featured
             )}
+            dataBanners={dataBanners.kampanye}
             onClick={(program) => navigate(`/kampanye/${program.codename}`)}
           />
         </div>

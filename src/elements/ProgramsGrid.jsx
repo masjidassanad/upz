@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import imageBannerMain from "@assanad/assets/banner/main-banner-upz-masjid-abdurrahman-assanad-jati.png";
 
-const ProgramsGrid = ({data, onClick = null}) => {
+const ProgramsGrid = ({data, dataBanners = [], onClick = null}) => {
   const navigate = useNavigate();
 
   const handleClick = (program) => {
@@ -26,7 +26,7 @@ const ProgramsGrid = ({data, onClick = null}) => {
           <div className="skeleton skeleton-img-fit">
             <img
               className="skeleton-img-fit"
-              src={program._banner || imageBannerMain}
+              src={dataBanners[program.codename] || imageBannerMain}
               alt={`Banner ${program.title} - UPZ Masjid Abdurrahman Assanad Jati`}
               loading="lazy"
             />
