@@ -5,7 +5,7 @@ import useBagsStore from "@assanad/services/useBagsStore";
 import config from '@assanad/config';
 import '@assanad/App.css'
 
-import { useInitData } from "@assanad/services/useDataSupabase";
+// import { useInitData } from "@assanad/services/useDataSupabase";
 import { Icon, IconLoading } from '@assanad/elements/Icon';
 
 // Autoload assets path: banner/
@@ -20,6 +20,180 @@ const BANNER_MAP = Object.fromEntries(
   ])
 );
 
+// Supabase fallback data
+const initDataFallback = {
+  "settings": {
+    "app": {
+      "title": "UPZ Masjid Abdurrahman As-Sanad"
+    },
+    "data": {
+      "version": "1"
+    }
+  },
+  "programs": [
+    {
+      "program_id": "61187a39-c3dd-48b5-b538-f7375bce0067",
+      "codename": "zakat",
+      "title": "Zakat Maal",
+      "teaser": "Ada hak orang lain dalam harta kita, bersihkan dengan berzakat.",
+      "description": null,
+      "category": "ziswah",
+      "featured": true,
+      "sort_order": 1,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-25T19:23:17.500166+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-ziswah-zakat.png"
+    },
+    {
+      "program_id": "25e45df1-8147-4ad0-8e32-82457a2c149e",
+      "codename": "infaq",
+      "title": "Sedekah Infaq",
+      "teaser": "Sedekahkan sebagian harta benda Anda bagi mereka yang membutuhkan.",
+      "description": null,
+      "category": "ziswah",
+      "featured": true,
+      "sort_order": 2,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-25T23:52:50.722679+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-ziswah-infaq.png"
+    },
+    {
+      "program_id": "bdd87f4d-c897-4740-840d-e0e39aa7a247",
+      "codename": "zakat-profesi",
+      "title": "Zakat Penghasilan",
+      "teaser": null,
+      "description": null,
+      "category": "ziswah",
+      "featured": false,
+      "sort_order": 11,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-ziswah-zakat-profesi.png"
+    },
+    {
+      "program_id": "a2e2d5f6-1167-4bab-a91f-3d88ef9eaa14",
+      "codename": "zakat-perdagangan",
+      "title": "Zakat Perdagangan",
+      "teaser": null,
+      "description": null,
+      "category": "ziswah",
+      "featured": false,
+      "sort_order": 12,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-ziswah-zakat-perdagangan.png"
+    },
+    {
+      "program_id": "d7ea0169-993a-4ef0-a107-3d48e69cd989",
+      "codename": "wakaf",
+      "title": "Wakaf",
+      "teaser": null,
+      "description": null,
+      "category": "ziswah",
+      "featured": false,
+      "sort_order": 31,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-ziswah-wakaf.png"
+    },
+    {
+      "program_id": "43f3a34c-4f1e-4314-85a8-75622acc0030",
+      "codename": "upz-kencleng",
+      "title": "Kencleng UPZ",
+      "teaser": "Agar berinfak lebih mudah dan dekat.",
+      "description": null,
+      "category": "kampanye",
+      "featured": true,
+      "sort_order": 71,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-kampanye-upz-kencleng.png"
+    },
+    {
+      "program_id": "dc5675db-3b7d-4377-9092-9b569344142b",
+      "codename": "upz-sampah-plastik",
+      "title": "Sedekah Sampah Plastik",
+      "teaser": "Merubah sampah menjadi berkah.",
+      "description": null,
+      "category": "kampanye",
+      "featured": true,
+      "sort_order": 72,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-kampanye-upz-sampah-plastik.png"
+    },
+    {
+      "program_id": "a06f79e1-c535-4698-b6e2-bebe46f02114",
+      "codename": "upz-menyapa",
+      "title": "UPZ Menyapa",
+      "teaser": "Program santunan dan dakwah sosial.",
+      "description": null,
+      "category": "donasi",
+      "featured": true,
+      "sort_order": 201,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-donasi-upz-menyapa.png"
+    },
+    {
+      "program_id": "f6f4ab3c-268b-4c04-8862-3e0f4b3f05e4",
+      "codename": "upz-pentasyarufan",
+      "title": "Pentasyarufan",
+      "teaser": "Penyaluran bantuan kepada dhuafa dan yatim.",
+      "description": null,
+      "category": "donasi",
+      "featured": true,
+      "sort_order": 202,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-donasi-upz-pentasyarufan.png"
+    },
+    {
+      "program_id": "0dda2b0f-9372-4fd5-b2c5-530c70fc0487",
+      "codename": "upz-pesantren-tahfidz",
+      "title": "Perintisan Pondok Tahfidz",
+      "teaser": "Dukung perintisan pondok pesantren tahfidz di wilayah Jati, Mulur.",
+      "description": null,
+      "category": "donasi",
+      "featured": true,
+      "sort_order": 203,
+      "metadata": null,
+      "status": "publish",
+      "created": "2025-03-26T00:47:25.229522+00:00",
+      "tags": [],
+      "image": null,
+      "_banner": "/upz/src/assets/banner/banner-donasi-upz-pesantren-tahfidz.png"
+    }
+  ]
+};
+
 const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,7 +201,11 @@ const App = () => {
   // console.log({config});
 
   const { getBags, setBags, checkAndFlushBags } = useBagsStore();
-  const { data: initData, isLoading, error } = useInitData();
+  // const { data: initData, isLoading, error } = useInitData();
+
+  const initData = initDataFallback;
+  const isLoading = false;
+  const error = false;
 
   useEffect(() => {
     if (initData) {
