@@ -1,10 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <meta http-equiv="refresh" content="3;url=https://abdurrahmanassanad.com">
-  <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedang Mengalihkan - UPZ Jamik Abdurrahman As-Sanad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .redirect-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .logo-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a2a6c, #fdbb2d);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .logo-inner {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .logo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 15px;
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        p {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 30px 0;
+            height: 20px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            animation: progress 5s linear forwards;
+        }
+        
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a2a6c;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .redirect-link {
+            display: inline-block;
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom:20px;
+        }
+        
+        .redirect-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #fdbb2d, #b21f1f);
+        }
+        
+        .redirect-link i {
+            margin-left: 8px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .redirect-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .logo-inner {
+                width: 130px;
+                height: 130px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <p>You are being redirected. If not, <a href="https://abdurrahmanassanad.com">click here</a>.</p>
+    <div class="redirect-container">
+        <div class="logo">
+            <div class="logo-frame">
+                <div class="logo-inner">
+                    <img src="logo-upz-assanad-250.png" alt="Logo UPZ Jamik Abdurrahman As-Sanad">
+                </div>
+            </div>
+        </div>
+        
+        <p>Anda sedang dialihkan ke situs web<br>UPZ Jamik Abdurrahman As-Sanad.</p>
+        <p>Harap tunggu sebentar...</p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="countdown">
+            <span id="countdown">Pengalihan dalam 5 detik</span>
+        </div>
+        
+        <a href="https://abdurrahmanassanad.com/upz/?utm_source=redirect_page&utm_medium=redirect_upz&utm_campaign=goto_main_site" class="redirect-link">Kunjungi Situs Sekarang</a>
+        <p style="font-size:15px;">Jika Anda tidak dialihkan secara otomatis, silakan klik tombol di atas.</p>
+        
+        <!-- <div class="footer"></div> -->
+    </div>
+
+    <script>
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = `Pengalihan dalam ${seconds} detik`;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'https://abdurrahmanassanad.com/upz/?utm_source=redirect_page&utm_medium=redirect_upz&utm_campaign=goto_main_site';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
